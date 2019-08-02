@@ -53,8 +53,8 @@ stat nstOutput;
 int displayHeight;
 int displayWidth;
 int lineHeight;
-int variacAdcPin = 0;
-int nstAdcPin = 1;
+#define variacAdcPin 0
+#define nstAdcPin 1
 long nextDisplayUpdate;
 
 void setup(void) 
@@ -65,14 +65,18 @@ void setup(void)
   displayHeight = u8g2.getDisplayHeight();
   displayWidth = u8g2.getDisplayWidth();
   lineHeight = displayHeight/4;
-  analogReference(INTERNAL1V1);
+  analogReference(INTERNAL1V1); // ADCs compare to 1.1v
   nextDisplayUpdate = millis() + 1000;
+  Serial1.begin(9600);
 }
 
-char buf[20];
+#define MODE_HOLD 0
+#define MODE_XMIT 1
 
 void loop(void) 
 {
+  unsigned long timeStamp = micros();
+
   // Read the variac voltage
   // The variac divider uses 8.2k and 3.3m resistors. Scale by: (3.3m + 8.2k)/(8.2k)(1.1 / 1023) = 0.43381
   float variacReading = analogRead(variacAdcPin) * 0.43381;
@@ -83,10 +87,52 @@ void loop(void)
   float nstReading = analogRead(nstAdcPin) * 0.026227; // Make it KV
   nstOutput.accumulate(nstReading);
 
+  static int runMode = MODE_HOLD;
+
+  if (Serial1.available())
+  {
+    char *command = ReadCommand();
+    runMode = MODE_HOLD;
+    if (command != NULL)
+    {
+      if (strcmp(command,"go")==0)
+      {
+        runMode = MODE_XMIT;
+        Serial1.println("Start logging");
+      }
+      else if (strcmp(command,"stop")==0)
+      {
+        Serial1.println("Stop logging");    
+      }
+      else
+      {
+        Serial1.println("???");
+      }
+    }
+  }
+
+  if (runMode == MODE_XMIT)
+  {
+    char fmtBuffer[20];
+    Serial1.print(timeStamp);
+    Serial1.print("  ");
+    dtostrf(variacReading,6,1,fmtBuffer);
+    Serial1.print(fmtBuffer);
+    Serial1.print("  ");
+    dtostrf(nstReading,6,1,fmtBuffer);
+    Serial1.println(fmtBuffer);
+  }
+
   if (millis() > nextDisplayUpdate)
   {
     nextDisplayUpdate += 1000;
+    UpdateDisplay(); // Also clears counters
+  }
+  delay(5);  
+}
 
+void UpdateDisplay()
+{
     float variacAverage = variacOutput.average();
     float variacRMS = variacOutput.standardDeviation();
     int variacN = variacOutput.n;
@@ -99,6 +145,7 @@ void loop(void)
 
     u8g2.clearBuffer();         // clear the internal memory
 
+    char buf[20];
     int row = 0;
     int middleCol = displayWidth*3/5;
     u8g2.drawStr(0,row,"VAR");
@@ -122,6 +169,38 @@ void loop(void)
     u8g2.drawStr(0,row,itoa(variacN,buf,10));
     
     u8g2.sendBuffer();          // transfer internal memory to the display    
+}
+
+#define BUFSIZE 30
+
+char *ReadCommand()
+{
+  static char readBuffer[BUFSIZE];
+  static int bufPosition;  // Where the next character goes. 
+  static bool needsReset = true;
+  bool gotEnd = false;
+
+  if (needsReset)
+  {
+    bufPosition = 0;
+    needsReset = false;
   }
-  delay(5);  
+  
+  while (Serial1.available())
+  {
+    char c = Serial1.read();
+    if (c=='\r')
+    {
+      readBuffer[bufPosition] = '\0';
+      needsReset = true;
+      Serial1.write('\r');
+      return readBuffer;
+    }
+    if (bufPosition < BUFSIZE-1)
+    {
+      readBuffer[bufPosition++] = c;
+      Serial1.write(c); // echo
+    }
+  }
+  return NULL;
 }
