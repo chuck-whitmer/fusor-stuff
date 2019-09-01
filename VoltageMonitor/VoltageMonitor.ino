@@ -64,13 +64,13 @@ long nextDisplayUpdate;
 float DividerOffset(float r1, float r2, float rS, float rL, float v1);
 float DividerMultiplier(float r1, float r2, float rS, float rL);
 
-float variacOffset = DividerOffset(270.0, 33.0, 8.2e3, 3.3e6, 5.0);
+float variacOffset = 0.540; // DividerOffset(270.0, 33.0, 8.2e3, 3.3e6, 5.0); // Was 0.543.
 float variacMultiplier = DividerMultiplier(270.0, 33.0, 8.2e3, 3.3e6);
-float nstOffset = DividerOffset(270.0, 33.0, 8.2e3, 200e6, 5.0);
-float nstMultiplier = DividerMultiplier(270.0, 33.0, 8.2e3, 200e6);
-float cwOffset = DividerOffset(330.0, 82.0, 10e3, 400e6, 5.0);
-float cwMultiplier = DividerMultiplier(330.0, 82.0, 10e3, 400e6);
-const float adcToVolts = 1.1 / 1023;
+float nstOffset = 0.542; // DividerOffset(270.0, 33.0, 8.2e3, 200e6, 5.0); // Was 0.545 but measured 0.542.
+float nstMultiplier = DividerMultiplier(270.0, 33.0, 8.2e3, 200e6) / 1000.0; // Make it KV.
+float cwOffset = 1.017; // DividerOffset(330.0, 82.0, 10e3, 400e6, 5.0); // Was 0.995, but measured 1.017
+float cwMultiplier = DividerMultiplier(330.0, 82.0, 10e3, 400e6) / 1000.0; // Make it KV.
+const float adcToVolts = 1.067 / 1023; // This device is not 1.1v. Depends on a particular diode.
 
 void setup(void) 
 {
@@ -101,11 +101,11 @@ void loop(void)
   // Read the NST voltage
   // The NST divider uses 8.2k and 200m resistors. Scale by: (200m + 8.2k)/(8.2k)(1.1 / 1023) = 26.227
   //  float nstReading = analogRead(nstAdcPin) * 0.026227; // Make it KV
-  float nstReading = (analogRead(nstAdcPin)*adcToVolts - nstOffset) * nstMultiplier / 1000.0; // Make it KV.
+  float nstReading = (analogRead(nstAdcPin)*adcToVolts - nstOffset) * nstMultiplier; // In KV.
   nstOutput.accumulate(nstReading);
 
   // Read the CW voltage
-  float cwReading = (analogRead(cwAdcPin)*adcToVolts - cwOffset) * cwMultiplier / 1000.0; // Make it KV.
+  float cwReading = (analogRead(cwAdcPin)*adcToVolts - cwOffset) * cwMultiplier; // In KV.
   cwOutput.accumulate(cwReading);
 
   static int runMode = MODE_HOLD;
@@ -125,6 +125,31 @@ void loop(void)
       {
         Serial1.println("Stop logging");    
       }
+      else if (strcmp(command,"params")==0)
+      {
+        char fmtBuffer[20];
+        Serial1.print("variac  ");
+        dtostrf(variacOffset,8,3,fmtBuffer);
+        Serial1.print(fmtBuffer);
+        Serial1.print("  ");
+        dtostrf(variacMultiplier,8,2,fmtBuffer);
+        Serial1.println(fmtBuffer);
+        Serial1.print("nst  ");
+        dtostrf(nstOffset,8,3,fmtBuffer);
+        Serial1.print(fmtBuffer);
+        Serial1.print("  ");
+        dtostrf(nstMultiplier,8,2,fmtBuffer);
+        Serial1.println(fmtBuffer);
+        Serial1.print("cw  ");
+        dtostrf(cwOffset,8,3,fmtBuffer);
+        Serial1.print(fmtBuffer);
+        Serial1.print("  ");
+        dtostrf(cwMultiplier,8,2,fmtBuffer);
+        Serial1.println(fmtBuffer);
+        Serial1.print("Internal ADC reference voltage:  ");
+        dtostrf(adcToVolts*1023,8,3,fmtBuffer);
+        Serial1.println(fmtBuffer);
+      }
       else
       {
         Serial1.println("???");
@@ -132,30 +157,15 @@ void loop(void)
     }
   }
 
-  if (runMode == MODE_XMIT)
-  {
-    char fmtBuffer[20];
-    Serial1.print(timeStamp);
-    Serial1.print("  ");
-    dtostrf(variacReading,6,1,fmtBuffer);
-    Serial1.print(fmtBuffer);
-    Serial1.print("  ");
-    dtostrf(nstReading,6,1,fmtBuffer);
-    Serial1.print(fmtBuffer);
-    Serial1.print("  ");
-    dtostrf(cwReading,6,1,fmtBuffer);
-    Serial1.println(fmtBuffer);
-  }
-
   if (millis() > nextDisplayUpdate)
   {
-    nextDisplayUpdate += 1000;
-    UpdateDisplay(); // Also clears counters
+    nextDisplayUpdate += 500;
+    UpdateDisplay(runMode == MODE_XMIT); // Also clears counters
   }
   delay(5);  
 }
 
-void UpdateDisplay()
+void UpdateDisplay(bool xmit)
 {
     float variacAverage = variacOutput.average();
     float variacRMS = variacOutput.standardDeviation();
@@ -172,38 +182,81 @@ void UpdateDisplay()
     cwOutput.Reset();
 
     u8g2.clearBuffer();         // clear the internal memory
+    if (xmit) 
+      Serial1.print(millis());
 
     char buf[20];
     int row = 0;
     int middleCol = displayWidth*3/5;
     u8g2.drawStr(0,row,"VAR");
+    if (xmit)
+    {
+      Serial1.print(" VAR ");
+      dtostrf(variacAverage,7,2,buf); // typical -1.00
+      Serial1.print(buf);
+    }
     dtostrf(variacAverage,6,1,buf);
     int len = u8g2.getStrWidth(buf);
     u8g2.drawStr(middleCol-len,row,buf);  
+    if (xmit)
+    {
+      Serial1.print(" ");
+      dtostrf(variacRMS,7,2,buf); // typical 140.00
+      Serial1.print(buf);
+    }
     dtostrf(variacRMS,6,1,buf);
     len = u8g2.getStrWidth(buf);
     u8g2.drawStr(displayWidth-len,row,buf);  
 
     row = lineHeight;
     u8g2.drawStr(0,row,"NST");
+    if (xmit)
+    {
+      Serial1.print(" NST ");
+      dtostrf(nstAverage,7,3,buf); // typical -0.100
+      Serial1.print(buf);
+    }
     dtostrf(nstAverage,6,1,buf);
     len = u8g2.getStrWidth(buf);
     u8g2.drawStr(middleCol-len,row,buf);  
+    if (xmit)
+    {
+      Serial1.print(" ");
+      dtostrf(nstRMS,6,3,buf); // typical 7.000
+      Serial1.print(buf);
+    }
     dtostrf(nstRMS,6,1,buf);
     len = u8g2.getStrWidth(buf);
     u8g2.drawStr(displayWidth-len,row,buf);  
 
     row = 2*lineHeight;
     u8g2.drawStr(0,row,"CW");
+    if (xmit)
+    {
+      Serial1.print(" CW ");
+      dtostrf(cwAverage,7,2,buf); // typical -41.00
+      Serial1.print(buf);
+    }
     dtostrf(cwAverage,6,1,buf);
     len = u8g2.getStrWidth(buf);
     u8g2.drawStr(middleCol-len,row,buf);  
+    if (xmit)
+    {
+      Serial1.print(" ");
+      dtostrf(cwRMS,5,2,buf); // typical 1.00
+      Serial1.print(buf);
+    }
     dtostrf(cwRMS,6,1,buf);
     len = u8g2.getStrWidth(buf);
     u8g2.drawStr(displayWidth-len,row,buf);  
 
     row = 3*lineHeight;
     u8g2.drawStr(0,row,itoa(variacN,buf,10));
+    if (xmit)
+    {
+      Serial1.print("  ");
+      Serial1.println(buf);
+    }
     
     u8g2.sendBuffer();          // transfer internal memory to the display    
 }
