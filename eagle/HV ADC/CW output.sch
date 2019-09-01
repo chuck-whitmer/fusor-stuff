@@ -307,6 +307,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="-0.508" y1="-1.524" x2="0.508" y2="-1.524" width="0.254" layer="94"/>
 <text x="0" y="-1.778" size="1.778" layer="96" align="top-center">&gt;VALUE</text>
 </symbol>
+<symbol name="5V" urn="urn:adsk.eagle:symbol:39412/1" library_version="1">
+<description>&lt;h3&gt;5V Voltage Supply&lt;/h3&gt;</description>
+<wire x1="0.762" y1="1.27" x2="0" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="-0.762" y2="1.27" width="0.254" layer="94"/>
+<pin name="5V" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
+<text x="0" y="2.794" size="1.778" layer="96" align="bottom-center">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GND2" urn="urn:adsk.eagle:component:39442/1" prefix="GND" library_version="1">
@@ -314,6 +321,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 &lt;p&gt;Ground supply with a traditional "earth ground" symbol.&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="GND" x="2.54" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="5V" urn="urn:adsk.eagle:component:39433/1" prefix="SUPPLY" library_version="1">
+<description>&lt;h3&gt;5V Supply Symbol&lt;/h3&gt;
+&lt;p&gt;Power supply symbol for a specifically-stated 5V source.&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="5V" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -1017,47 +1038,56 @@ Source: &lt;a href="https://docs-emea.rs-online.com/webdocs/1489/0900766b8148969
 <part name="J1" library="cwParts" deviceset="TERMINAL_M6" device="" value="HV"/>
 <part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="PTH_2MM" package3d_urn="urn:adsk.eagle:package:38029/1" value="ADC"/>
 <part name="R2" library="cwParts" deviceset="SM108031005FE" device="" value="HV 200M"/>
+<part name="R4" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="15KOHM" device="-HORIZ-1/4W-5%" package3d_urn="urn:adsk.eagle:package:39658/1" value="270"/>
+<part name="R5" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="15KOHM" device="-HORIZ-1/4W-5%" package3d_urn="urn:adsk.eagle:package:39658/1" value="68"/>
+<part name="SUPPLY1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="5V" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 <text x="12.7" y="104.14" size="1.778" layer="91">CW Output
-40 KV</text>
+0 to -40 KV</text>
+<text x="-17.78" y="60.96" size="1.778" layer="91">~ 1.0V</text>
 </plain>
 <instances>
-<instance part="R1" gate="G$1" x="5.08" y="50.8" smashed="yes" rot="R90">
-<attribute name="NAME" x="3.556" y="50.8" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="6.604" y="50.8" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
+<instance part="R1" gate="G$1" x="-5.08" y="58.42" smashed="yes">
+<attribute name="NAME" x="-5.08" y="59.944" size="1.778" layer="95" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="-5.08" y="56.896" size="1.778" layer="96" font="vector" align="top-center"/>
 </instance>
 <instance part="R3" gate="G$1" x="5.08" y="78.74" smashed="yes" rot="R90">
 <attribute name="NAME" x="2.286" y="85.852" size="1.778" layer="95" rot="R90" align="center-left"/>
 <attribute name="VALUE" x="8.128" y="91.948" size="1.778" layer="96" rot="R270" align="center-left"/>
 </instance>
-<instance part="GND2" gate="G$1" x="5.08" y="43.18" smashed="yes">
-<attribute name="VALUE" x="5.08" y="40.386" size="1.778" layer="96" align="top-center"/>
+<instance part="GND2" gate="G$1" x="-15.24" y="43.18" smashed="yes">
+<attribute name="VALUE" x="-15.24" y="40.386" size="1.778" layer="96" align="top-center"/>
 </instance>
 <instance part="J1" gate="G$1" x="5.08" y="104.14" smashed="yes" rot="R270">
 <attribute name="VALUE" x="0.254" y="106.68" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="8.128" y="101.6" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="J2" gate="G$1" x="22.86" y="58.42" smashed="yes" rot="R180">
-<attribute name="VALUE" x="24.384" y="63.5" size="1.778" layer="96" font="vector" rot="R180"/>
-<attribute name="NAME" x="23.368" y="55.118" size="1.778" layer="95" font="vector" rot="R180"/>
+<instance part="J2" gate="G$1" x="5.08" y="45.72" smashed="yes" rot="R90">
+<attribute name="VALUE" x="10.16" y="44.196" size="1.778" layer="96" font="vector" rot="R90"/>
+<attribute name="NAME" x="1.778" y="45.212" size="1.778" layer="95" font="vector" rot="R90"/>
 </instance>
 <instance part="R2" gate="G$1" x="5.08" y="60.96" smashed="yes" rot="R90">
 <attribute name="NAME" x="2.286" y="68.072" size="1.778" layer="95" rot="R90" align="center-left"/>
 <attribute name="VALUE" x="8.128" y="74.168" size="1.778" layer="96" rot="R270" align="center-left"/>
 </instance>
+<instance part="R4" gate="G$1" x="-22.86" y="58.42" smashed="yes">
+<attribute name="NAME" x="-22.86" y="59.944" size="1.778" layer="95" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="-22.86" y="56.896" size="1.778" layer="96" font="vector" align="top-center"/>
+</instance>
+<instance part="R5" gate="G$1" x="-15.24" y="50.8" smashed="yes" rot="R90">
+<attribute name="NAME" x="-16.764" y="50.8" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="-13.716" y="50.8" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
+</instance>
+<instance part="SUPPLY1" gate="G$1" x="-27.94" y="58.42" smashed="yes" rot="R90">
+<attribute name="VALUE" x="-32.766" y="59.182" size="1.778" layer="96" rot="R180" align="bottom-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="3.3V" class="0">
-<segment>
-<pinref part="R1" gate="G$1" pin="1"/>
-<pinref part="GND2" gate="G$1" pin="3.3V"/>
-</segment>
-</net>
 <net name="N$2" class="0">
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
@@ -1070,14 +1100,33 @@ Source: &lt;a href="https://docs-emea.rs-online.com/webdocs/1489/0900766b8148969
 <pinref part="R3" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="3.3V" class="0">
+<segment>
+<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="GND2" gate="G$1" pin="3.3V"/>
+</segment>
+</net>
+<net name="5V" class="0">
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="SUPPLY1" gate="G$1" pin="5V"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="-15.24" y1="58.42" x2="-15.24" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="58.42" x2="-15.24" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="58.42" x2="-15.24" y2="58.42" width="0.1524" layer="91"/>
+<junction x="-15.24" y="58.42"/>
+</segment>
+</net>
+<net name="N$4" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="5.08" y1="60.96" x2="5.08" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="J2" gate="G$1" pin="1"/>
-<wire x1="5.08" y1="58.42" x2="5.08" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="58.42" x2="5.08" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="60.96" x2="5.08" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="5.08" y1="58.42" x2="5.08" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="0" y1="58.42" x2="5.08" y2="58.42" width="0.1524" layer="91"/>
 <junction x="5.08" y="58.42"/>
 </segment>
 </net>
