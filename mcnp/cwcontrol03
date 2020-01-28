@@ -71,7 +71,7 @@ F24:p 3                $ Photon spectrum at observer
 E24  1e-11 129log 100
 c
 set xsdir xsdir_20200124cw
-nps 1e3
+nps 1e7
 mode n p
 c
 SDEF rad=D1 erg=2.45 par=n pos=0 0 133.5    $ Center of igloo
