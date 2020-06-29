@@ -1,0 +1,233 @@
+Shielding test for 2.45 MeV neutrons
+  1  2  -1.205e-3  11 12 13 -40  imp:n=1 imp:p=1    $ Air around everything
+  2  3  -0.93     -11            imp:n=1 imp:p=1    $ Paraffin block
+  3  2  -1.586e-9 -12            imp:n=1 imp:p=1    $ Detector, 1 micron of air
+  4  2  -1.586e-9 -13            imp:n=1 imp:p=1    $ Detector, 1 micron of air
+ 99  0              40           imp:n=0 imp:p=0    $ Void
+
+ 11  rpp   50   75  -50 50  -50 50  $ Paraffin block
+ 12  rpp  100  102  -50 50  -50 50  $ Detector behind paraffin block
+ 13  rpp -102 -100  -50 50  -50 50  $ Unshielded detector
+ 40  so  1000  $ The universe
+
+vol 3.76988e10 J J J
+c
+c Air
+c
+m2    6012  0.000150
+      7014  0.784431
+      8016  0.210748
+     18040  0.004671
+c
+c Paraffin
+c
+m3    1001  0.675311
+      6012  0.324689
+c
+c Tallies
+c
+FC4  Neutrons detected behind the paraffin block
+F4:n 3
+E4  1e-10 109log 10
+c
+FC24  Gammas detected behind the paraffin block
+F24:p 3
+E24  1e-9 109log 100
+c
+FC44  Neutrons in unshielded region
+F44:n 4
+E44  1e-10 109log 10
+c
+FC64  Neutrons in air
+F64:n 1
+E64  1e-10 109log 10
+c
+FC54  Gammas in unshielded region
+F54:p 4
+E54  1e-9 109log 100
+c
+set datapath c:\mcnpdata
+set xsdir xsdir_20200628cw
+set defnid 00 80
+c
+nps 1e6
+mode n p
+c
+SDEF rad=D1 erg=2.45 par=n
+SI1  0.0 0.5          $ Uniform distribution in a sphere of radius 0.5 cm
+SP1  -21  2
+c
+PRINT 110 126
+c
+FC14  Neutron dose in shielded region (Sv per source particle)
+F14:n 3
+DE14  LOG
+     1.000E-10
+     1.315E-08
+     9.258E-08
+     4.242E-07
+     1.625E-06
+     5.019E-06
+     1.273E-05
+     1.053E-04
+     7.149E-04
+     1.629E-03
+     2.890E-03
+     5.409E-03
+     9.769E-03
+     1.502E-02
+     2.571E-02
+     3.747E-02
+     5.661E-02
+     9.870E-02
+     1.464E-01
+     2.843E-01
+     5.135E-01
+     7.895E-01
+     1.258E+00
+     2.114E+00
+     4.175E+00
+     6.082E+00
+     8.858E+00
+     1.268E+01
+     1.688E+01
+     1.984E+01
+     2.787E+01
+     3.048E+01
+     3.986E+01
+     6.697E+01
+     1.048E+02
+     1.553E+02
+     2.032E+02
+     2.610E+02
+     3.355E+02
+     4.469E+02
+     5.952E+02
+     7.514E+02
+     9.485E+02
+     1.357E+03
+     1.874E+03
+     3.208E+03
+DF14  LOG
+     7.774E-12
+     7.774E-12
+     9.637E-12
+     1.050E-11
+     1.057E-11
+     9.763E-12
+     9.184E-12
+     7.368E-12
+     6.246E-12
+     6.208E-12
+     6.521E-12
+     7.463E-12
+     9.365E-12
+     1.219E-11
+     1.772E-11
+     2.607E-11
+     4.030E-11
+     6.870E-11
+     1.017E-10
+     1.766E-10
+     2.505E-10
+     3.067E-10
+     3.467E-10
+     3.872E-10
+     4.117E-10
+     4.220E-10
+     4.432E-10
+     5.042E-10
+     5.735E-10
+     6.135E-10
+     5.296E-10
+     4.801E-10
+     4.221E-10
+     3.365E-10
+     2.977E-10
+     2.749E-10
+     2.683E-10
+     2.716E-10
+     3.033E-10
+     3.623E-10
+     4.223E-10
+     4.923E-10
+     5.599E-10
+     6.648E-10
+     7.750E-10
+     9.316E-10
+FC34  Gamma dose in shielded region (Sv per source particle)
+F34:p 3
+DE34 LOG
+     1.678E-01
+     2.925E-01
+     4.498E-01
+     5.100E-01
+     5.479E-01
+     7.043E-01
+     1.250E+00
+     1.578E+00
+     2.514E+00
+     3.174E+00
+     4.152E+00
+     4.966E+00
+     5.730E+00
+     6.495E+00
+     8.805E+00
+     1.305E+01
+     1.901E+01
+     4.106E+01
+     5.000E+01
+     1.005E+02
+     1.464E+02
+     2.251E+02
+     3.992E+02
+     5.412E+02
+     7.471E+02
+     1.169E+03
+     1.733E+03
+     2.267E+03
+     3.811E+03
+     4.897E+03
+     6.292E+03
+     7.799E+03
+     1.020E+04
+     1.335E+04
+     1.655E+04
+     2.051E+04
+DF34 LOG
+     9.937E-13
+     1.790E-12
+     2.634E-12
+     2.801E-12
+     3.166E-12
+     3.924E-12
+     6.369E-12
+     7.201E-12
+     9.431E-12
+     1.073E-11
+     1.066E-11
+     1.060E-11
+     9.607E-12
+     9.432E-12
+     9.037E-12
+     8.448E-12
+     8.294E-12
+     8.245E-12
+     8.607E-12
+     8.985E-12
+     9.495E-12
+     1.054E-11
+     1.148E-11
+     1.184E-11
+     1.184E-11
+     1.163E-11
+     1.149E-11
+     1.163E-11
+     1.267E-11
+     1.323E-11
+     1.307E-11
+     1.252E-11
+     1.229E-11
+     1.252E-11
+     1.283E-11
+     1.364E-11
