@@ -1,0 +1,67 @@
+Shielding test for 2.45 MeV neutrons
+  1  2  -1.205e-3  11 12 13 -40  imp:n=1 imp:p=1    $ Air around everything
+  2  3  -0.138203 -11            imp:n=1 imp:p=1    $ Paraffin block !!! H Only !!!
+  3  2  -1.586e-9 -12            imp:n=1 imp:p=1    $ Detector, 1 micron of air
+  4  2  -1.586e-9 -13            imp:n=1 imp:p=1    $ Detector, 1 micron of air
+ 99  0              40           imp:n=0 imp:p=0    $ Void
+
+ 11  rpp   50  50.1  -50 50  -50 50  $ Paraffin block
+ 12  rpp  100  102  -50 50  -50 50  $ Detector behind paraffin block
+ 13  rpp -102 -100  -50 50  -50 50  $ Unshielded detector
+ 40  so  1000  $ The universe
+
+vol 4.18875e9 J J J  $ (4/3)*Pi*1000^3 - (1/10)*100*100 - 2*100*100 - 2*100*100
+c
+c Air
+c
+m2    6012  0.000150
+      7014  0.784431
+      8016  0.210748
+     18040  0.004671
+c
+c Paraffin H only
+c
+m3    1001  1.000
+c
+c Tallies
+c
+FC4  Neutrons detected behind the paraffin block
+F4:n 3
+E4  1e-10 109log 10
+c
+FC74  Neutrons detected behind the paraffin block
+F74:n 3
+E74  0 119i 3
+c
+FC84  Neutrons in unshielded region
+F84:n 4
+E84  0 119i 3
+c
+FC24  Gammas detected behind the paraffin block
+F24:p 3
+E24  1e-9 109log 100
+c
+FC44  Neutrons in unshielded region
+F44:n 4
+E44  1e-10 109log 10
+c
+FC64  Neutrons in air
+F64:n 1
+E64  1e-10 109log 10
+c
+FC54  Gammas in unshielded region
+F54:p 4
+E54  1e-9 109log 100
+c
+set datapath c:\mcnpdata
+set xsdir xsdir_20200628cw
+set defnid 00 80
+c
+nps 1e7
+mode n p
+c
+SDEF erg=2.451 par=n pos 0 0 0 vec 1 0 0 dir 1
+c
+PRINT 110 126
+c
+dbcn 446074327
