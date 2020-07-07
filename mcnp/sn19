@@ -1,0 +1,50 @@
+Shielding test for 2.45 MeV neutrons
+  1  2  -1.586e-9  11 -12        imp:n=1 imp:p=1    $ 1 micron air around everything
+  2  3  -0.138203 -11            imp:n=1 imp:p=1    $ Paraffin block !!! H Only !!!
+  3  2  -1.586e-9  12 -13        imp:n=1 imp:p=1    $ Spherical detector
+  4  2  -1.586e-9  13 -40        imp:n=1 imp:p=1    $ 1 micron of air
+ 99  0              40           imp:n=0 imp:p=0    $ Void
+
+ 11  rpp   49.9875  50.0125  -0.0125 0.0125  -0.0125 0.0125  $ Tiny paraffin block
+ 12  sx   50  20      $ Spherical detector
+ 13  sx   50  21
+ 40  so  1000  $ The universe
+
+c
+c Air
+c
+m2    6012  0.000150
+      7014  0.784431
+      8016  0.210748
+     18040  0.004671
+c
+c Paraffin H only
+c
+m3    1001  1.000
+c
+c Tallies
+c
+FC4  Neutrons in the shell - log scale
+F4:n 3
+E4  1e-10 109log 10
+c
+FC14  Neutrons in the shell - linear scale
+F14:n 3
+E14  0 119i 3
+c
+FC24  Neutrons in the shell - linear thermal
+F24:n 3
+E24  0 199i 1e-6
+c
+c set datapath c:\mcnpdata
+c set xsdir xsdir_20200628cw
+c set defnid 00 80
+c
+nps 1e7
+mode n
+c
+SDEF erg=2.451 par=n pos 0 0 0 vec 1 0 0 dir 1
+c
+PRINT 110 126
+c
+dbcn 3510271035
