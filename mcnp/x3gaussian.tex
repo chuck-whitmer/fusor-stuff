@@ -1,0 +1,99 @@
+%++++++++++++++++++++++++++++++++++++++++
+% Don't modify this section unless you know what you're doing!
+\documentclass[letterpaper,12pt]{article}
+\usepackage{authblk}
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath, amssymb}  % improve math presentation
+\usepackage{amsfonts}
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\hypersetup{
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,        % color of internal links
+    citecolor=blue,        % color of links to bibliography
+    filecolor=magenta,     % color of file links
+    urlcolor=blue         
+}
+\usepackage{float}
+\usepackage{listings}
+\usepackage[titletoc,title]{appendix}
+\usepackage{siunitx}
+\usepackage[table]{xcolor}
+\setcounter{MaxMatrixCols}{30}
+
+\newcommand{\nuc}[2]{$^{#2}$#1}
+%++++++++++++++++++++++++++++++++++++++++
+
+\begin{document}
+
+%\section{An interesting distribution}
+I am interested in the distribution of the random variable $x$ if I calculate it according to:
+
+\begin{equation}
+x = \sqrt{-log(r_1 r_2)}
+\end{equation}
+where $r_1$ and $r_2$ are random variables uniformly distributed between $0$ and $1$.
+
+Consider the probability integral over all combinations of $r_1$ and $r_2$:
+
+\begin{equation}
+\label{simpleintegral}
+\int_{0}^{1} \int_{0}^{1} dr_1 dr_2 = 1
+\end{equation}
+
+In order to understand the distribution of $x$ I will perform a change of variables in (\ref{simpleintegral}), setting:
+
+\begin{equation}
+\label{subs1}
+\begin{aligned}
+x&=\sqrt{-log(r_1 r_2)}\\
+y&=r_2
+\end{aligned}
+\end{equation}
+and then integrate out the $y$ dependence.
+
+The inverse of the mapping in (\ref{subs1}) is:
+\begin{equation}
+\begin{aligned}
+r_1&=\frac{1}{y}e^{-x^2}\\
+r_2&=y
+\end{aligned}
+\end{equation}
+Note that for a given $x$, we will need to have $y\ge e^{-x^2}$ so that $r_1$ will be in the interval $[0,1]$. The probability integral becomes:
+\begin{equation}
+\label{subs1integral}
+\int_{0}^{1} \int_{0}^{1} dr_1 dr_2 = \int_{0}^{\infty}dx\int_{e^{-x^2}}^{1}|\mathbf{J}|dy
+\end{equation}
+where $\mathbf{J}$ is the Jacobian of the transform.
+
+\begingroup
+\renewcommand*{\arraystretch}{1.5}
+\begin{equation}
+\mathbf{J}=
+\begin{vmatrix}
+\frac{\partial r_1}{\partial x} & \frac{\partial r_1}{\partial y}\\
+\frac{\partial r_2}{\partial x} & \frac{\partial r_2}{\partial y}
+\end{vmatrix}
+=
+\begin{vmatrix}
+-\frac{2 x}{y}e^{-x^2} & -\frac{1}{y^2}e^{-x^2}\\
+0 & 1
+\end{vmatrix}
+=-\frac{2 x}{y}e^{-x^2}
+\end{equation}
+\endgroup
+
+And so we get:
+\begin{equation}
+\begin{aligned}
+\int_{0}^{\infty}dx\int_{e^{-x^2}}^{1}|\mathbf{J}|dy
+&=\int_{0}^{\infty}2 x e^{-x^2} dx\int_{e^{-x^2}}^{1}\frac{1}{y}dy
+=\int_{0}^{\infty}2 x e^{-x^2} dx (log(1)-log(e^{-x^2}))\\
+&=\int_{0}^{\infty}2 x^3 e^{-x^2} dx=1
+\end{aligned}
+\end{equation}
+I claim that we have integrated out a degree of freedom that we are not interested in and are left with the distribution of $x$.
+
+\end{document}
