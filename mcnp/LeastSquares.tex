@@ -406,8 +406,11 @@ Here are the steps we would need to collect the covariance:
 
 \begin{itemize}
 	\item Create an array, perhaps \texttt{t[]}, to hold the $N$ bins of tally data. Also create an $N\times N$ array, maybe \texttt{tcov[,]}, to hold the covariance data. With some extra complication, this could be a triangular array, since the covariance array is symmetric.
-	\item For each neutron history, create a ``shadow'' tally array, \texttt{s[]}, also with $N$ bins. Collect the fluence contribution to each bin over the life of the neutron. A single neutron can contribute to many bins, or even multiple times to a single bin.
-	\item When a neutron history is completed, add the shadow tally into the real tally,\\ \texttt{t[i] += s[i];} \\But also add all possible products into the covariance array:\\ \texttt{tcov[i,j] += s[i]*s[j];}
+	\item For each neutron history, create a ``shadow'' tally array, \texttt{s[]}, also with $N$ bins. Collect the fluence contribution to each shadow bin over the life of the neutron. A single neutron can contribute to many bins, or even multiple times to a single bin.
+	\item When a neutron history is completed, add the shadow tally into the real tally,\\
+	\texttt{for (int i=0; i<N; i++) t[i]+=s[i];} \\
+	But also add all possible products into the covariance array:\\ 
+	\texttt{for (int i=0; i<N; i++) for (int j=0; j<N; j++) tcov[i,j]+=s[i]*s[j];} \\
 \end{itemize}
 
 \section{Comparing Distribution Histograms}
@@ -420,7 +423,7 @@ Here are the steps we would need to collect the covariance:
 	}
 \end{figure}
 
-We also have another kind of histogram to compare that is fundamentally different. In figure \ref{fig.cosine} for example, we have scattered neutrons off of a target and then count them in bins according to the angle of the scattering. This has the nice property that each neutron can contribute only once to the histogram. Each neutron is independent of the next, so does this mean that the bin counts are independent? Interestingly, they are not.
+We also have another kind of histogram to compare that is fundamentally different. In figure \ref{fig.cosine} for example, we have scattered neutrons off of a target and then count them in bins according to the angle of the scattering. This has the nice property that each neutron can contribute only once to the histogram. Each neutron is independent of the next, so does this mean that the bin counts are independent? Surprisingly, they are not.
 
 When a neutron is counted in one bin, it is \textit{not} counted in another! This actually means that there is a negative correlation between bin counts. It may be easier to understand when you think of it in terms of a random fluctuation away from the average. Suppose one bin, by pure luck, happens to get more hits than its fair share. Because the total number of particles is fixed, some other bin or bins must be lower than expected.
 
