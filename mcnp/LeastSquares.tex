@@ -483,10 +483,22 @@ Now that we have seen that we have the inverse, we can come up with a functional
 \end{equation}
 The bin containing the mode will be multiplied by zero, and therefore ignored.
 
-This definition of $\myMatrix{M}$ is simple enough that you don't need to fill a matrix with it, but can instead calculate the weights on the fly in the code that calculates $\chi^2$.
+Assume we have chosen a distribution $p_i$ as our standard and wish to compare a distribution $q_i$ measured with $K$ neutrons. The full expression for the $\chi^2$ with $N-1$ degrees of freedom is now:
+\begin{equation} \label{eq.dist.chi.square.full}
+\chi^2=\sum_{i=1}^N \sum_{j=1}^N \myMatrix{M}_{ij}(Kp_i - Kq_i)(Kp_j - Kq_j)
+\end{equation}
+The $p_i$ and $q_i$ are multiplied by $K$ because the covariance $\myMatrix{E}$ that we are using relates to the counts in the bins.
 
+This problem continues to provide happy simplifications. Because we know that:
+\begin{equation}
+\sum_{i=1}^{N}p_i=\sum_{i=1}^{N}q_i=1
+\end{equation}
+equation (\ref{eq.dist.chi.square.full}) can be distilled down to:
+\begin{equation}
+\chi^2=\sum_{i=1}^N\frac{K(p_i - q_i)^2}{p_i}
+\end{equation}
+That is amazing. This formula is for comparing a given standard distribution $p_i$ with a distribution $q_i$ that was measured with $K$ particles. Note that the $\chi^2$ has $N-1$ degrees of freedom, where $N$ is the number of bins in the histogram.
 
-
-
+You can quickly find a formula very similar to this on the internet, but in general, people tend to neglect the $K$, and also never discuss the degrees of freedom, both of which are completely necessary if you wish to judge the goodness of fit.
 
 \end{document}
