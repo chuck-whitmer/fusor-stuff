@@ -429,6 +429,61 @@ When a neutron is counted in one bin, it is \textit{not} counted in another! Thi
 
 This differs in a fortunate way from the fluence histogram in that we can calculate the covariance matrix for the bins from first principles. We will not need to collect any extra data to compute the $\chi^2$ for the comparison of two of these histograms.
 
+It is easy to figure out the covariance matrix because the bins each follow binomial statistics. Suppose that $K$ neutrons are tracked and $p_i$ is the probability of a neutron being counted in bin $i$. The expected number of counts in bin $i$ is $Kp_i$. The variance of that count is $Kp_i(1-p_i)$. If we add bins $i$ and $j$ together, then the variance of the sum would be, again by binomial statistics, $K(p_i+p_j)(1-(p_i+p_j))$. This means that the covariance of bins $i$ and $j$ must be $-Kp_ip_j$. You can work out with simple algebra that:
+\begin{equation}
+	K(p_i+p_j)(1-(p_i+p_j))=
+	\begin{pmatrix}
+		1 & 1
+	\end{pmatrix}
+	\begin{pmatrix}
+	Kp_i(1-p_i) & -Kp_ip_j \\
+	-Kp_ip_j & Kp_j(1-p_j) 
+	\end{pmatrix}
+	\begin{pmatrix}
+	1 \\
+	1
+	\end{pmatrix}
+\end{equation}
+and this shows that we have the correct covariance.
+
+Therefore, if we have $N$ bins, the whole $N \times N$ covariance matrix would be:
+
+\begin{equation} \label{eq.cov.E}
+	\myMatrix{E}_{ij}=
+	\begin{cases}
+		Kp_i(1-p_i), & \text{if } i=j \\
+		-Kp_ip_j,  & \text{otherwise}
+	\end{cases}
+\end{equation}
+
+As in equation (\ref{eq.general.chi.square}), what we need to compute $\chi^2$ is $\myMatrix{M}$, the inverse of the covariance matrix. There is one sticking point here, and that is that the matrix $\myMatrix{E}$ as defined above is singular. But that should only slow us down momentarily, because we ought to have expected it. Note that the counts in the $N$ bins will always sum to $K$, so we don't really have $N$ independent measurements. If we simply remove some row and corresponding column from $\myMatrix{E}$ we will have a non-singular covariance matrix. For numerical stability, I would remove the row/column for the mode of the distribution.
+
+For just right now, assume that the bins are ordered such that $p_N$ is the mode of the distribution, i.e. the largest probability. (We will abandon this assumption later, but it is nice for a quick calculation.) We will ignore the last row and column of $\myMatrix{E}$ and consider it to be an $(N-1) \times (N-1)$ matrix.
+
+Fortune smiles on us. It is possible to explicitly compute the inverse of our reduced $\myMatrix{E}$. Define the $(N-1) \times (N-1)$ matrix $\myMatrix{M}$ as follows:
+
+\begin{equation} \label{eq.invcov.M}
+	\myMatrix{M}_{ij}=
+	\begin{cases}
+		\frac{p_i+p_N}{Kp_ip_N}, & \text{if } i=j \\
+		\frac{1}{Kp_N},  & \text{otherwise}
+	\end{cases}
+\end{equation}
+It is a nice homework exercise to demonstrate that the $\myMatrix{E}$ of equation (\ref{eq.cov.E}) and the $\myMatrix{M}$ of equation (\ref{eq.invcov.M}) are inverses.
+
+Now that we have seen that we have the inverse, we can come up with a functionally equivalent set of weights $\myMatrix{M}$ without reordering the bins. Instead, just assume that bin $m$ is the mode of the distribution, and define an $N \times N$ matrix $\myMatrix{M}$ as follows:
+
+\begin{equation} \label{eq.invcov.M}
+	\myMatrix{M}_{ij}=
+	\begin{cases}
+		0, & \text{if }i=m\text{ or }j=m \\
+		\frac{p_i+p_m}{Kp_ip_m}, & \text{if }i=j\text{ and }i\ne m\text{ and }j\ne m \\
+		\frac{1}{Kp_m},  & \text{if }i\ne j\text{ and }i\ne m\text{ and }j\ne m
+	\end{cases}
+\end{equation}
+The bin containing the mode will be multiplied by zero, and therefore ignored.
+
+This definition of $\myMatrix{M}$ is simple enough that you don't need to fill a matrix with it, but can instead calculate the weights on the fly in the code that calculates $\chi^2$.
 
 
 
