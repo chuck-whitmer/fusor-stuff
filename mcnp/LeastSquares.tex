@@ -398,7 +398,7 @@ We would take the results of the program that we declare to be the ``gold standa
 
 Our measurements in this case are the fluence values in the histogram bins. Are these measurements independent or correlated? The answer is that they are highly correlated. A single neutron path will contribute fluence to many energy bins during the simulation. We have seen in detail how neutrons scatter, and we know that when the neutron has low energy it is very likely to scatter into a nearby energy bin. And so high counts and fluence in one bin make it likely that neighboring bins also have high counts.
 
-As a result, we need to use equation (\ref{eq.general.chi.square}) to compute the $\chi^2$. The number of degrees of freedom is the number of bins, and we would use the $chi^2$ distribution to determine how well the histograms match.
+As a result, we need to use equation (\ref{eq.general.chi.square}) to compute the $\chi^2$. The number of degrees of freedom is the number of bins, and we would use the $\chi^2$ distribution to determine how well the histograms match.
 
 In order to do this, we need to know the covariance matrix for the measurements in each bin.  Unfortunately, this is a matter of current software development as we cannot calculate the covariance from first principles, and so need to collect it during simulation.
 
