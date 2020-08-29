@@ -499,6 +499,17 @@ equation (\ref{eq.dist.chi.square.full}) can be distilled down to:
 \end{equation}
 That is amazing. This formula is for comparing a given standard distribution $p_i$ with a distribution $q_i$ that was measured with $K$ particles. Note that the $\chi^2$ has $N-1$ degrees of freedom, where $N$ is the number of bins in the histogram.
 
-You can quickly find a formula very similar to this on the internet, but in general, people tend to neglect the $K$, and also never discuss the degrees of freedom, both of which are completely necessary if you wish to judge the goodness of fit.
+You can quickly find a formula very similar to this on the internet, but in general, people tend to neglect the $K$, and also never discuss the degrees of freedom, both of which are necessary if you wish to judge the goodness of fit.
+
+This analysis has assumed that the distribution $p_i$ is a given and that $K$ is the number of neutrons simulated to measure the $q_i$ distribution. This is the same as assuming that $p_i$ was measured with an infinite number of neutrons, i.e. $K_p=\infty$ and that $K=K_q$. The formula works out the same if we take both $K_p$ and $K_q$ finite and use:
+
+\begin{equation}
+	\frac{1}{K}=\frac{1}{K_p}+\frac{1}{K_q}
+\end{equation}
+or equivalently
+\begin{equation}
+	K=\frac{K_pK_q}{K_p+K_q}
+\end{equation}
+
 
 \end{document}
