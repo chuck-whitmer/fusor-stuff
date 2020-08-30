@@ -36,7 +36,7 @@
 \maketitle
 
 \begin{abstract}
-Over the years I have performed thousands of least squares fits, and written software in several languages to calculate those fits. I've got a simple way of looking at things that some people might find useful.
+Over the years I have performed thousands of least squares fits, and written software in several languages to calculate those fits. I've got a simple way of looking at things that some people might find useful when writing best-fit code.
 \end{abstract}
 
 \section{Linear Least Squares}
@@ -70,7 +70,7 @@ Since all the $x_i$ and $y_i$ are known, this consists only of $a$, $b$, and a b
 
 Actually, the name ``Linear Least Squares'' does not refer to the linear model that we are fitting, instead it refers to the fact that the problem reduces to a set of linear equations in our unknown parameters, as in (\ref{linear1}). We will expand on this later.
 
-Also, especially looking forward to more complex models, I have found a particular notation useful in solving Linear Least Squares problems. Suppose I define ``twiddle'' parameters as follows:
+Looking forward to more complex models, I have found a particular notation useful in solving Linear Least Squares problems. Suppose I define ``twiddle'' parameters as follows:
 
 \begin{equation}
 \begin{aligned}
@@ -142,12 +142,12 @@ The chi-square distribution is well known, but is actually a set of distribution
 
 Suppose we perform an experiment and measure 10 values of $y_i$. The set of results can vary in a 10-dimensional space, and we would call that 10 degrees of freedom. When we fit this data to a linear model, i.e. one with two parameters, we would hope to take away two degrees of freedom from the residuals (the differences between the data and the best fit) and we would say that 8 degrees of freedom would be left over. The best fist found from minimizing equation (\ref{chi.square}) would give a $\chi^2$ value that should follow a chi-square distribution with 8 degrees of freedom. We can look up the value in a table of the chi-square distribution for 8 degrees of freedom and read out how probable that result is. (At least in the old days I would do that. A good scientific calculator these days should have the function built in. On the HP-Prime you would use {\footnotesize CHISQUARE\_CDF}; on the TI-84 the function is $\chi^2$cdf.)
 
-It happens that the mean value of the chi-square distribution for $k$ degrees of freedom is exactly $k$. So when we do our experiment measuring our 10 data points and then fit them to a linear model, we would hope that the minimum $\chi^2$ would be about 8. If it is far off from that, then either the model or our error estimates are bad.
+It happens that the mean value of the chi-square distribution for $k$ degrees of freedom is exactly $k$. So when we do our experiment measuring our 10 data points and then fit them to a linear model, we would hope that the minimum $\chi^2$ would be about 8. Note that the $\chi^2$ distribution has two tails, high and low. As a result, when thinking about significance we do not want a value that is far too low or high. If the minimum $\chi^2$ value is far off from the number of degrees of freedom, then either the model or our error estimates are bad.
 
-To try to develop an intuition about the degrees of freedom, suppose we did an experiment taking two data points, and then fit a linear model to it. Well, we can perfectly fit a line to any two data points, so our $\chi^2$ value would be zero. This is a poor experiment because we have no degrees of freedom left to judge how good the fit is. If we had taken 3 data points to test our linear model, then we would have one degree of freedom to test, and we would hope to get a $\chi^2$ value around 1 for a successful fit.
+To help to develop an intuition about the degrees of freedom, suppose we did an experiment taking two data points, and then fit a linear model to it. Well, we can perfectly fit a line to any two data points, so our $\chi^2$ value would be zero. This is a poor experiment because we have no degrees of freedom left to judge how good the fit is. If we had taken 3 data points to test our linear model, then we would have one degree of freedom to test, and we would hope to get a $\chi^2$ value around 1 for a successful fit.
 
 \section{A Linear Model Using $\chi^2$}
-Let's revisit the fit of the linear model that we did in section \ref*{sec.one}. If you work through the math you will see that we simply need to redefine the twiddle variables like this:
+Let's revisit the fit of the linear model that we did in section \ref*{sec.one}. If you work through the math you will see that we simply need to redefine the twiddle parameters like this:
 
 \begin{equation}
 \begin{aligned}
@@ -162,7 +162,7 @@ Let's revisit the fit of the linear model that we did in section \ref*{sec.one}.
 
 And now note that $\widetilde{1}$ is not even $N$, but something complicated, so beware when manipulating it.
 
-Given the new twiddle definitions, the solution looks identical:
+Given the new twiddle definitions, the solution looks formally identical:
 
 \begin{equation} \label{eq.linear.solution}
 \begin{pmatrix}
@@ -220,7 +220,7 @@ Models that look even more complex can be solved, i.e. fit, in this way. For exa
 \begin{equation} \label{eq.sincosmodel}
 y = a\ sin(\omega t)+ b\ cos(\omega t)+c\ t + d
 \end{equation}
-I knew the value of $\omega$ already, so this model is just linear in four unknowns, and therefore I could use linear least squares. By defining more twiddle variables, the solution can be quickly written:
+I knew the value of $\omega$ already, so this model is just linear in four unknowns, and therefore I could use linear least squares. By defining more twiddle parameters, the solution can be quickly written:
 
 \begin{equation} \label{eq.sincos}
 \begin{pmatrix}
@@ -262,7 +262,7 @@ Also note that the matrix is always symmetric. This is a good thing to check.
 
 \section{Bonus: The Covariance of the Fit}
 
-I call this a bonus, because while any statistics course will teach you how to solve linear least squares problems, they almost never cover this part.
+I call this a bonus, because while any statistics course will teach you how to solve linear least squares problems, basic courses don't cover the covariance of the resulting fit parameters. It is not that this is unknown math, but my focus is on calculating fits \textit{in code that you write yourself}. If you are using a comprehensive statistics package like \textit{R} or a fancy math package like \textit{Mathematica}, this is all built-in and easily accessed. If you are writing your own code, you might not know that you already have extra information at hand.
 
 Suppose you have fit some data to a cubic according to equation (\ref{eq.cubic.solution}).  Now suppose somebody asks you what the error bars are on your resultant parameter $a$.  How would you know?
 
@@ -285,7 +285,7 @@ We have such a dependence of $a$ on the set of $y_i$, and so we can do the calcu
 and this $\myMatrix{C}$ just happens to be the covariance matrix of the best fit parameters. (The proof involves only a bit of linear algebra.)
 
 And now it is easy to pick out:
-\begin{equation}
+\begin{equation} \label{eq.ab.errors}
 \begin{aligned}
 \sigma_a&=\sqrt{\myMatrix{C}_{11}} \\
 \sigma_b&=\sqrt{\myMatrix{C}_{22}} 
@@ -313,12 +313,12 @@ But having the covariance matrix is even more powerful than that. Suppose that, 
 
 To make this more concrete, suppose we have fit our data to the linear model $y=ax+b$ and what is important to us is not simply $a$ or $b$, but the x-intercept. The x-intercept is obviously:
 
-\begin{equation}
+\begin{equation} \label{eq.x.intercept}
 x_0=-\frac{b}{a}
 \end{equation}
 
 Assume we have calculated:
-\begin{equation}
+\begin{equation} \label{eq.clinear}
 \myMatrix{C}_{linear}=
 \begin{pmatrix}
 \widetilde{xx} & \widetilde{x} \\
@@ -328,7 +328,7 @@ Assume we have calculated:
 then we would have:
 \begingroup
 \renewcommand*{\arraystretch}{1.5}
-\begin{equation}
+\begin{equation} \label{eq.intercept.error}
 \sigma_{x_0}^2=\begin{pmatrix}
 \frac{b}{a^2} & -\frac{1}{a}
 \end{pmatrix}
@@ -339,13 +339,108 @@ then we would have:
 \end{pmatrix}
 \end{equation}
 \endgroup
-where the two vectors dotted into the matrix are the appropriate partial derivatives.
+where the two vectors dotted into the matrix are the appropriate partial derivatives. I will use this in a worked example below.
 
 \section{Note: Experiment Design}
 
 Go back and take a look at the solutions for three different problems: equations (\ref{eq.linear.solution}), (\ref{eq.cubic.solution}), and (\ref{eq.sincos}). Note that $y$ only appears in the vector on the right in all cases. The matrix, which determines the covariance of the fit parameters, depends only on the form of the model, the locations of the independent variables $x_i$ or $t_i$, and how accurately you will be able to measure, i.e. $\sigma_i$.
 
 This means that we can understand the accuracy of an experiment before we have even performed it! This is powerful, and permits you to strategically choose where, $x_i$, or when, $t_i$, you make your observations, in order to get the best results.
+
+\section{Example: A Simple Linear Fit}
+
+Consider the following data points I have collected. I wish to find a best fit line, understand the errors and covariance on the best fit parameters $a$ and $b$, and compute the $x$-intercept, with errors. The data is plotted in figure \ref{fig.linear.data}.
+\begin{equation*}
+\begin{array}{rrr}
+	x & y\  & \sigma \\
+	0 & 10.5 & 1.0 \\
+	1 & 8.3 & 1.0 \\
+	2 & 7.5 & 1.0 \\
+	3 & 4.1 & 1.0 \\
+	4 & 1.6 & 1.0 \\
+	5 & 0.0 & 1.0 \\
+	6 & -2.0 & 1.0 \\
+	7 & -3.9 & 1.0 \\
+	8 & -6.3 & 1.0 \\
+	9 & -7.6 & 1.0 \\
+	10 & -9.3 & 1.0 \\
+\end{array}
+\end{equation*}
+
+\begin{figure}[ht] 
+	\centering	\includegraphics[width=0.7\columnwidth]{line.fit.example}
+	\caption{
+		\label{fig.linear.data}
+		The raw data for the line fit example.
+	}
+\end{figure}
+
+I collect and arrange the various sums as described above and calculate the covariance matrix $\myMatrix{C}$ as in equation (\ref{eq.clinear}):
+
+\begin{equation}
+\myMatrix{C}=
+\begin{pmatrix}
+0.00909091 & -0.0454545 \\
+-0.0454545 & 0.318182
+\end{pmatrix}
+\end{equation}
+and compute the fit parameters:
+\begin{equation} \label{eq.best.ab.fit}
+\begin{aligned}
+a &= -2.033\pm 0.095 \\
+b &= 10.43\pm 0.56
+\end{aligned}
+\end{equation}
+The errors on $a$ and $b$ are calculated as in equation (\ref{eq.ab.errors}).
+
+The $x$-intercept, $x_0$ is given by equations (\ref{eq.x.intercept}) and (\ref{eq.intercept.error}):
+
+\begin{equation}
+x_0=5.13\pm 0.15
+\end{equation}
+
+The errors on $a$ and $b$ do not tell the full story about the uncertainty of our fit. Note that the off-diagonal terms of $\myMatrix{C}$ are negative. These tell us that if $a$ is actually bigger than our best fit, then $b$ must be somewhat smaller; but by how much? How can we visualize it?
+
+\begin{figure}[ht] 
+	\centering	\includegraphics[width=0.7\columnwidth]{fig.ab.covariance}
+	\caption{
+		\label{fig.ab.covariance}
+		A contour, in blue, showing where $\chi^2$ is exactly 1 above the minimum, along with the error bars derived from the covariance matrix in red.
+	}
+\end{figure}
+
+The first thing to do is to calculate the correlation matrix $\myMatrix{R}$ which is found by normalizing the covariance matrix, as shown. Rows and columns are each divided by roots of the diagonals. After normalization, all entries are between $-1$ and $1$, with the diagonal entries necessarily being $1$.
+
+\begingroup
+\renewcommand*{\arraystretch}{1.5}
+\begin{equation}
+\myMatrix{R}=
+\begin{pmatrix}
+\frac{C_{11}}{\sqrt{C_{11}}\sqrt{C_{11}}} & \frac{C_{12}}{\sqrt{C_{11}}\sqrt{C_{22}}} \\
+\frac{C_{21}}{\sqrt{C_{11}}\sqrt{C_{22}}} & \frac{C_{22}}{\sqrt{C_{22}}\sqrt{C_{22}}} 
+
+\end{pmatrix}
+\end{equation}
+\endgroup
+
+The resulting correlation matrix is this:
+\begin{equation}
+\myMatrix{R}=
+\begin{pmatrix}
+1.00 & -0.85 \\
+-0.85 & 1.00
+\end{pmatrix}
+\end{equation}
+which shows a very high negative correlation between $a$ and $b$.
+
+A nice way to visualize the covariance is to consider $\chi^2$ as a function of $a$ and $b$, and plot the points where the $\chi^2$ is exactly 1.00 above its minumum. I.e. plot the locus of points $(a,b)$ where:
+\begin{equation}
+\chi^2(a,b)=\chi^2_{min}+1
+\end{equation}
+See figure \ref{fig.ab.covariance}. The best fit $a$ and $b$ from equation (\ref{eq.best.ab.fit}) is shown in red for comparison. The negative correlation is large and obvious. 
+
+And this is another ``bonus'': Finding the contour where $\chi^2$ is 1 above the minimum can help you understand the errors and correlations of the fit parameters \textit{even when the best fit you are calculating cannot be solved by linear least squares}. The fitting errors on non-linear models can be found this way.
+
 
 \section{A Generalized $\chi^2$}
 The usual definition of $\chi^2$ for fitting some model $y=f(x)$ is this:
@@ -425,7 +520,7 @@ Here are the steps we would need to collect the covariance:
 
 We also have another kind of histogram to compare that is fundamentally different. In figure \ref{fig.cosine} for example, we have scattered neutrons off of a target and then count them in bins according to the angle of the scattering. This has the nice property that each neutron can contribute only once to the histogram. Each neutron is independent of the next, so does this mean that the bin counts are independent? Surprisingly, they are not.
 
-When a neutron is counted in one bin, it is \textit{not} counted in another! This actually means that there is a negative correlation between bin counts. It may be easier to understand when you think of it in terms of a random fluctuation away from the average. Suppose one bin, by pure luck, happens to get more hits than its fair share. Because the total number of particles is fixed, some other bin or bins must be lower than expected.
+When a neutron is counted in one bin, it is \textit{not} counted in another! So this means that there is a negative correlation between bin counts. It may be easier to understand when you think of it in terms of a random fluctuation away from the average. Suppose one bin, by pure luck, happens to get more hits than its fair share. Because the total number of particles is fixed, the average of all the other bins must be lower than expected.
 
 This differs in a fortunate way from the fluence histogram in that we can calculate the covariance matrix for the bins from first principles. We will not need to collect any extra data to compute the $\chi^2$ for the comparison of two of these histograms.
 
