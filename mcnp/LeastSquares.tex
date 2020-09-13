@@ -495,18 +495,30 @@ Our measurements in this case are the fluence values in the histogram bins. Are 
 
 As a result, we need to use equation (\ref{eq.general.chi.square}) to compute the $\chi^2$. The number of degrees of freedom is the number of bins, and we would use the $\chi^2$ distribution to determine how well the histograms match.
 
-In order to do this, we need to know the covariance matrix for the measurements in each bin.  Unfortunately, this is a matter of current software development as we cannot calculate the covariance from first principles, and so need to collect it during simulation.
+In order to do this, we need to know the covariance matrix for the measurements in each bin.  The matrix must be collected in a simulation, as we cannot calculate it from first principles.
 
-Here are the steps we would need to collect the covariance:
+These are the steps we need to collect the covariance:
 
 \begin{itemize}
-	\item Create an array, perhaps \texttt{t[]}, to hold the $N$ bins of tally data. Also create an $N\times N$ array, maybe \texttt{tcov[,]}, to hold the covariance data. With some extra complication, this could be a triangular array, since the covariance array is symmetric.
+	\item Create an array, perhaps \texttt{t[]}, to hold the $N$ bins of tally data. Also create an $N\times N$ array, maybe called \texttt{tc[,]}, to hold the covariance data. With some extra complication, this could be a triangular array, since the covariance array is symmetric.
 	\item For each neutron history, create a ``shadow'' tally array, \texttt{s[]}, also with $N$ bins. Collect the fluence contribution to each shadow bin over the life of the neutron. A single neutron can contribute to many bins, or even multiple times to a single bin.
 	\item When a neutron history is completed, add the shadow tally into the real tally,\\
 	\texttt{for (int i=0; i<N; i++) t[i]+=s[i];} \\
 	But also add all possible products into the covariance array:\\ 
-	\texttt{for (int i=0; i<N; i++) for (int j=0; j<N; j++) tcov[i,j]+=s[i]*s[j];} \\
+	\texttt{for (int i=0; i<N; i++) for (int j=0; j<N; j++) tc[i,j]+=s[i]*s[j];} 
 \end{itemize}
+
+Just as \texttt{t[i]} is not the fluence we would report for bin \texttt{i}, the final \texttt{tc[i,j]} is not the covariance. If this tally is the result of simulating $K$ neutrons, then the fluence in bin \texttt{i} is \texttt{f[i]=t[i]/K}. And the covariance would be: \texttt{cov[i,j]=tc[i,j]/K-f[i]*f[j]}.
+
+To compare two fluence histograms $f_i$ and $g_i$ we use this formula:
+\begin{equation} \label{eq.chi.square.fluence}
+	\chi^2=\sum_{i=1}^N \sum_{j=1}^N K\myMatrix{M}_{ij}(f_i - g_i)(f_j - g_j)
+\end{equation}
+where $\myMatrix{M}$ is the inverse of the covariance matrix, and $K$ is determined by the numbers of neutrons used to measure $f_i$ and $g_i$.
+\begin{equation}
+	\frac{1}{K}=\frac{1}{K_f}+\frac{1}{K_g}
+\end{equation}
+
 
 \section{Comparing Distribution Histograms}
 
