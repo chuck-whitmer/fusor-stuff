@@ -1,8 +1,9 @@
 void FastTrig::Test()
 {
-  char buf[100];
+  char buf[30];
   char cbuf[15];
   char sbuf[15];
+  Serial.print("Test trig\n");
   for (int angle=0; angle<=720; angle+=5)
   {
     long rotations = angle*65536L/360;
@@ -25,7 +26,7 @@ float FastTrig::Cos(long x)
   if (q & 1) z = 16384L - z;
   long r = InnerCos(z);
   if (q==1 || q==2) r = -r;
-  return r/65536.0f;
+  return r * 1.52588e-5f; // 1.0/65536.
 }
 
 // Fast approximation to cosine. Accurate to +-0.0009.
