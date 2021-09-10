@@ -1,3 +1,5 @@
+// FastTrig - Uses integer arithmetic to provide close approximations to sin() and cos().
+
 class FastTrig
 {
 public:  
@@ -8,7 +10,7 @@ public:
   }
   static void Test();  
 private:
-  FastTrig()
+  FastTrig() // It's a static class; never call the constructor.
   {}
   static const long b; // Magic number for InnerCos.
   static long InnerCos(long x); // x is 14 bit positive fraction of a quadrant. (0 <= x <= 16384)

@@ -1,3 +1,7 @@
+// CholeskyDecomposition - Factors a positive definite square matrix.
+// On return, the matrix has been replaced with a lower triangular matrix.
+// What would be the diagonal elements are returned in p.
+
 void LinearAlgebra::CholeskyDecomposition(double *mat, double *p, int n)
 {
   for (int i=0, ni=0; i<n; i++, ni+=n)
@@ -16,6 +20,10 @@ void LinearAlgebra::CholeskyDecomposition(double *mat, double *p, int n)
     p[i] = e;
   }
 }
+
+// Solves the inverse problem mat.x = b.
+// Input is the decomposed matrix and p vector.
+// The b vector is replaced with the answer x.
 
 void LinearAlgebra::CholeskySolver(const double *mat, const double *p, int n, double *b)
 {
@@ -37,6 +45,7 @@ void LinearAlgebra::CholeskySolver(const double *mat, const double *p, int n, do
 
 void LinearAlgebra::TestCholesky()
 {
+#ifdef TESTING  
   double a[9] = {
     5.0, 2.0, 3.0,
     2.0, 7.0, 5.0,
@@ -63,4 +72,5 @@ void LinearAlgebra::TestCholesky()
     Serial.print(dtostrf(b[i],10,5,buf));
   }
   Serial.print("\n");
+#endif
 }
