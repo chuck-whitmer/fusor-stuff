@@ -9,12 +9,13 @@ void SinFit60Hz::Accumulate(unsigned long t, double y)
                // Also: 50000*12288 = 614,400,000 which fits in an unsigned long.
   double s = FastTrig::Sin(tCycles);
   double c = FastTrig::Cos(tCycles);
+
   sum1 += 1.0;
   sumS += s;
   sumC += c;
   sumSS += s*s;
   sumCS += c*s;
-  sumCC += c*c;
+  //sumCC += c*c;
   sumY += y;
   sumSY += s*y;
   sumCY += c*y;
@@ -24,6 +25,7 @@ void SinFit60Hz::Accumulate(unsigned long t, double y)
 
 void SinFit60Hz::SolveFit(double &a, double &b, double &c)
 {
+  sumCC = sum1 - sumSS;
   double mat[] = {sumSS, sumCS, sumS, sumCS, sumCC, sumC, sumS, sumC, sum1};
   double vec[] = {sumSY, sumCY, sumY};
   double p[3]; // Work area.
