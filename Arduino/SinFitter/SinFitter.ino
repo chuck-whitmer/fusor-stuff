@@ -7,7 +7,7 @@
 
 void setup() {
   Serial.begin(9600);
-  //FastTrig::Test();
+  FastTrig::Test();
   //LinearAlgebra::TestCholesky();
   SinFit60Hz::TestFit();
 }

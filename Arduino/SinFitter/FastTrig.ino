@@ -39,15 +39,24 @@ void FastTrig::Test()
   char cbuf[15];
   char sbuf[15];
   Serial.print("Test trig\n");
+  unsigned long timing = 0;
+  int count = 0;
   for (int angle=0; angle<=720; angle+=10)
   {
     long rotations = angle*65536L/360;
+    timing -= micros();
     float c = Cos(rotations);
     float s = Sin(rotations);
+    timing += micros();
+    count += 2;
     dtostrf(c,10,5,cbuf);
     dtostrf(s,10,5,sbuf);
     sprintf(buf,"%3d %s %s\n",angle,sbuf,cbuf);
     Serial.print(buf);
   }
+  long avgTime = timing/count;
+  Serial.print("Avg trig time = ");
+  Serial.print(avgTime);
+  Serial.print("\n");
 #endif
 }
