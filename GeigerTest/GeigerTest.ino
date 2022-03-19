@@ -9,7 +9,7 @@ int displayHeight;
 int displayWidth;
 int lineHeight;
 
-int info1, info2;
+int info;
 long lastInfoMicros;
 long nextTick;
 void setup(void) 
@@ -49,8 +49,7 @@ void loop(void)
       {
         haveByte1 = false;
         lastInfoMicros = time2;
-        info1 = byte1;
-        info2 = byte2;
+        info = byte1 + 256 * byte2;
         UpdateDisplay();
       }
       else
@@ -80,13 +79,9 @@ void UpdateDisplay(void)
   int len;
   if (micros()-lastInfoMicros < 1000000)
   {
-    sprintf(buf, "%d", info1);
+    sprintf(buf, "%d", info);
     len = u8g2.getStrWidth(buf);
     u8g2.drawStr(leftCol-len,row,buf);
-    
-    sprintf(buf, "%d", info2);
-    len = u8g2.getStrWidth(buf);
-    u8g2.drawStr(middleCol-len,row,buf);
   }
   row = displayHeight/2;
   dtostrf(millis()/1000.0,6,1,buf);
