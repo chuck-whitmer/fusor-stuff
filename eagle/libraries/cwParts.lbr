@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.1">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -53,7 +53,7 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
@@ -435,10 +435,10 @@ Orientation</text>
 <package name="DIODE_14">
 <pad name="P$1" x="-7" y="0" drill="0.8" diameter="1.6764"/>
 <pad name="P$2" x="7" y="0" drill="0.8" diameter="1.6764"/>
-<wire x1="-6" y1="1.5" x2="-6" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="-6" y1="-1.5" x2="-6" y2="1.5" width="0.127" layer="21"/>
+<wire x1="-6" y1="1.5" x2="6" y2="1.5" width="0.127" layer="21"/>
 <wire x1="-6" y1="-1.5" x2="6" y2="-1.5" width="0.127" layer="21"/>
 <wire x1="6" y1="-1.5" x2="6" y2="1.25" width="0.127" layer="21"/>
-<wire x1="-6" y1="1.5" x2="6" y2="1.5" width="0.127" layer="21"/>
 <wire x1="6" y1="1.5" x2="6" y2="1.25" width="0.127" layer="21"/>
 <text x="-6" y="2" size="1.27" layer="25">&gt;NAME</text>
 <polygon width="0.127" layer="21">
@@ -451,6 +451,58 @@ Orientation</text>
 <package name="LUG_SQUARE_M6">
 <pad name="P$1" x="0" y="0" drill="6" diameter="10" shape="square"/>
 <text x="-5" y="6" size="1.27" layer="25">&gt;Name</text>
+</package>
+<package name="SM108031007FE">
+<description>&lt;b&gt;SM108031007FE&lt;/b&gt;&lt;br&gt;
+</description>
+<pad name="1" x="-24.13" y="0.77" drill="1.015" diameter="1.522"/>
+<pad name="2" x="24.13" y="0.77" drill="1.015" diameter="1.522"/>
+<text x="0" y="0.131" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0.131" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-26.415" y1="1.27" x2="26.415" y2="1.27" width="0.2" layer="51"/>
+<wire x1="26.415" y1="1.27" x2="26.415" y2="-1.27" width="0.2" layer="51"/>
+<wire x1="26.415" y1="-1.27" x2="-26.415" y2="-1.27" width="0.2" layer="51"/>
+<wire x1="-26.415" y1="-1.27" x2="-26.415" y2="1.27" width="0.2" layer="51"/>
+<wire x1="-27.415" y1="2.531" x2="27.415" y2="2.531" width="0.1" layer="51"/>
+<wire x1="27.415" y1="2.531" x2="27.415" y2="-2.27" width="0.1" layer="51"/>
+<wire x1="27.415" y1="-2.27" x2="-27.415" y2="-2.27" width="0.1" layer="51"/>
+<wire x1="-27.415" y1="-2.27" x2="-27.415" y2="2.531" width="0.1" layer="51"/>
+<wire x1="25" y1="1.27" x2="26.415" y2="1.27" width="0.1" layer="21"/>
+<wire x1="26.415" y1="1.27" x2="26.415" y2="-1.27" width="0.1" layer="21"/>
+<wire x1="26.415" y1="-1.27" x2="-26.415" y2="-1.27" width="0.1" layer="21"/>
+<wire x1="-26.415" y1="-1.27" x2="-26.415" y2="1.27" width="0.1" layer="21"/>
+<wire x1="-26.415" y1="1.27" x2="-25.5" y2="1.27" width="0.1" layer="21"/>
+<wire x1="-23" y1="1.27" x2="23" y2="1.27" width="0.1" layer="21"/>
+<wire x1="-25" y1="1.27" x2="-25.5" y2="1.27" width="0.1" layer="21"/>
+</package>
+<package name="POWERPOLE_PAIR_WINGS">
+<description>A double powerpole connection with mounting wings.</description>
+<pad name="PPNEG" x="-3.937" y="-23.368" drill="1.778" shape="square"/>
+<pad name="PPPOS" x="3.937" y="-23.368" drill="1.778"/>
+<wire x1="0" y1="-13.97" x2="-7.874" y2="-13.97" width="0.127" layer="21"/>
+<wire x1="-7.874" y1="-13.97" x2="-7.874" y2="0" width="0.127" layer="21"/>
+<wire x1="-7.874" y1="0" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="0" y2="-13.97" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="7.874" y2="0" width="0.127" layer="21"/>
+<wire x1="7.874" y1="0" x2="7.874" y2="-13.97" width="0.127" layer="21"/>
+<wire x1="7.874" y1="-13.97" x2="0" y2="-13.97" width="0.127" layer="21"/>
+<wire x1="7.874" y1="0" x2="15.748" y2="0" width="0.127" layer="21"/>
+<wire x1="15.748" y1="0" x2="15.748" y2="-13.97" width="0.127" layer="21"/>
+<wire x1="15.748" y1="-13.97" x2="7.874" y2="-13.97" width="0.127" layer="21"/>
+<wire x1="-7.874" y1="0" x2="-15.748" y2="0" width="0.127" layer="21"/>
+<wire x1="-15.748" y1="0" x2="-15.748" y2="-13.97" width="0.127" layer="21"/>
+<wire x1="-15.748" y1="-13.97" x2="-7.874" y2="-13.97" width="0.127" layer="21"/>
+<text x="-5.588" y="-7.239" size="1.27" layer="21">PP -</text>
+<text x="2.032" y="-7.239" size="1.27" layer="21">PP +</text>
+<rectangle x1="-4.191" y1="-22.098" x2="-3.683" y2="-14.097" layer="21"/>
+<rectangle x1="3.556" y1="-22.098" x2="4.064" y2="-14.097" layer="21"/>
+<hole x="-11.811" y="-6.985" drill="4.572"/>
+<hole x="11.811" y="-6.985" drill="4.572"/>
+<wire x1="-15.621" y1="0" x2="15.748" y2="-0.127" width="0.254" layer="51"/>
+<wire x1="15.748" y1="-0.127" x2="15.875" y2="-14.097" width="0.254" layer="51"/>
+<wire x1="15.875" y1="-14.097" x2="-15.748" y2="-13.97" width="0.254" layer="51"/>
+<wire x1="-15.748" y1="-13.97" x2="-15.748" y2="-0.127" width="0.254" layer="51"/>
+<text x="-3.81" y="1.27" size="1.27" layer="25">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -650,6 +702,28 @@ Minimal footprint</description>
 <pin name="P$1" x="7.62" y="0" visible="off" length="middle" direction="pas" rot="R180"/>
 <text x="-3.81" y="3.81" size="1.778" layer="95">&gt;Name</text>
 </symbol>
+<symbol name="SM108031005FE">
+<wire x1="5.08" y1="1.27" x2="12.7" y2="1.27" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-1.27" x2="12.7" y2="1.27" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-1.27" x2="5.08" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="5.08" y1="1.27" x2="5.08" y2="-1.27" width="0.254" layer="94"/>
+<text x="13.97" y="6.35" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="13.97" y="3.81" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="1" x="0" y="0" visible="off" length="middle"/>
+<pin name="2" x="17.78" y="0" visible="off" length="middle" rot="R180"/>
+</symbol>
+<symbol name="POWERPOLE_PAIR">
+<pin name="PPNEG" x="-2.54" y="0" length="middle" direction="in" rot="R90"/>
+<pin name="PPPOS" x="2.54" y="0" length="middle" direction="in" rot="R90"/>
+<wire x1="-5.08" y1="17.78" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="0" y2="17.78" width="0.254" layer="94"/>
+<wire x1="0" y1="17.78" x2="-5.08" y2="17.78" width="0.254" layer="94"/>
+<wire x1="0" y1="17.78" x2="5.08" y2="17.78" width="0.254" layer="94"/>
+<wire x1="5.08" y1="17.78" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
+<text x="-5.08" y="20.32" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="ADA254" prefix="SD">
@@ -827,6 +901,50 @@ Minimal footprint</description>
 <device name="" package="LUG_SQUARE_M6">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SM108031005FE" prefix="R">
+<description>&lt;b&gt;Ohmite Slim Mox Series Planar Radial Thick Film Resistor 10M +/-1% 2.5W +/-25 ppm/C, +/-50 ppm/C&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://docs-emea.rs-online.com/webdocs/1489/0900766b8148969d.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="SM108031005FE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SM108031007FE">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="Ohmite Slim Mox Series Planar Radial Thick Film Resistor 10M +/-1% 2.5W +/-25 ppm/C, +/-50 ppm/C" constant="no"/>
+<attribute name="HEIGHT" value="mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="Ohmite" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="SM108031005FE" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="N/A" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=N%2FA" constant="no"/>
+<attribute name="RS_PART_NUMBER" value="8927338" constant="no"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/8927338" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="POWER_POLES_WINGS" prefix="PP">
+<description>Dual powerpoles for voltage supply with mounting wings.</description>
+<gates>
+<gate name="G$1" symbol="POWERPOLE_PAIR" x="0" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="POWERPOLE_PAIR_WINGS">
+<connects>
+<connect gate="G$1" pin="PPNEG" pad="PPNEG"/>
+<connect gate="G$1" pin="PPPOS" pad="PPPOS"/>
 </connects>
 <technologies>
 <technology name=""/>
