@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     70085,       1728]
-NotebookOptionsPosition[     62777,       1620]
-NotebookOutlinePosition[     63200,       1636]
-CellTagsIndexPosition[     63157,       1633]
+NotebookDataLength[     53984,       1344]
+NotebookOptionsPosition[     49890,       1278]
+NotebookOutlinePosition[     50313,       1294]
+CellTagsIndexPosition[     50270,       1291]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -147,7 +147,8 @@ Cell[BoxData[
              StyleBox[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
-                StandardForm]],
+                StandardForm],
+               ImageSizeCache->{40.2, {1., 7.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -184,7 +185,8 @@ Cell[BoxData[
              StyleBox[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
-                StandardForm]],
+                StandardForm],
+               ImageSizeCache->{46.800000000000004`, {1., 7.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -258,7 +260,8 @@ Cell[BoxData[
              StyleBox[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
-                StandardForm]],
+                StandardForm],
+               ImageSizeCache->{59.400000000000006`, {1., 7.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -318,12 +321,12 @@ Cell[BoxData[
  RowBox[{"jfraw", "=", 
   RowBox[{"Import", "[", 
    RowBox[{
-   "\"\<c:\\\\git\\\\FusorExperiments\\\\logs\\\\keep\\\\fusor-2022-07-19T16-\
-00-30_yes.json\>\"", ",", "\"\<list\>\""}], "]"}]}]], "Input",
+   "\"\<c:\\\\git\\\\FusorExperiments\\\\logs\\\\keep\\\\fusor-2022-07-22T16-\
+23-42_Friday traversal.json\>\"", ",", "\"\<list\>\""}], "]"}]}]], "Input",
  CellChangeTimes->{{3.867411408787629*^9, 3.867411436114813*^9}, {
-  3.8674119337865524`*^9, 3.867411935138386*^9}, {3.8674120283460894`*^9, 
-  3.8674120288496695`*^9}},
- CellLabel->"In[16]:=",ExpressionUUID->"178eeede-8231-4fcb-bef2-58855ac9c99b"],
+   3.8674119337865524`*^9, 3.867411935138386*^9}, {3.8674120283460894`*^9, 
+   3.8674120288496695`*^9}, 3.8676191085360727`*^9},
+ CellLabel->"In[40]:=",ExpressionUUID->"178eeede-8231-4fcb-bef2-58855ac9c99b"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -334,11 +337,16 @@ Cell[BoxData[
         TagBox[
          RowBox[{"{", 
           
-          RowBox[{"\<\"{\\\"base-timestamp\\\":1658271630430,\\\"instant\\\":\
-\\\"2022-07-19T16:00:30\\\",\\\"log\\\":[\"\>", 
+          RowBox[{"\<\"{\\\"base-timestamp\\\":1658532222378,\\\"instant\\\":\
+\\\"2022-07-22T16:23:42\\\",\\\"log\\\":[\"\>", 
            ",", "\<\"{\\\"device\\\":\\\"<reset>\\\",\\\"data\\\":{},\\\"\
-servertime\\\":1658271630430},\"\>", ",", 
-           TemplateBox[{"115421"},
+servertime\\\":1658532222378},\"\>", 
+           ",", "\<\"{\\\"device\\\":\\\"SENSORARRAY\\\",\\\"data\\\":{\\\"\
+gc2\\\":{\\\"value\\\":1717,\\\"vartime\\\":1561805},\\\"gc3\\\":{\\\"value\\\
+\":1717,\\\"vartime\\\":1561805},\\\"hfm\\\":{\\\"value\\\":0.00000000,\\\"\
+vartime\\\":1561757},\\\"devicetime\\\":1561850},\\\"servertime\\\":\
+1658532222406},\"\>", ",", 
+           TemplateBox[{"26189"},
             "OutputSizeLimit`Skeleton"], ",", "\<\"  {}\"\>", 
            ",", "\<\"]}\"\>"}], "}"}],
          Short[#, 5]& ],
@@ -411,7 +419,7 @@ servertime\\\":1658271630430},\"\>", ",",
            BaselinePosition->Baseline,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            OutputSizeLimit`Defer, 16, 23898094345335008346, 5/2],
+            OutputSizeLimit`Defer, 40, 23898094345335008346, 5/2],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -448,7 +456,7 @@ servertime\\\":1658271630430},\"\>", ",",
            BaselinePosition->Baseline,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            OutputSizeLimit`Defer, 16, 23898094345335008346, 5 2],
+            OutputSizeLimit`Defer, 40, 23898094345335008346, 5 2],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -470,7 +478,8 @@ servertime\\\":1658271630430},\"\>", ",",
              StyleBox[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
-                StandardForm]],
+                StandardForm],
+               ImageSizeCache->{34.2, {1., 7.}}],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -485,7 +494,7 @@ servertime\\\":1658271630430},\"\>", ",",
            BaselinePosition->Baseline,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            OutputSizeLimit`Defer, 16, 23898094345335008346, Infinity],
+            OutputSizeLimit`Defer, 40, 23898094345335008346, Infinity],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -507,8 +516,7 @@ servertime\\\":1658271630430},\"\>", ",",
              StyleBox[
               DynamicBox[ToBoxes[
                 FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
-                StandardForm],
-               ImageSizeCache->{59.400000000000006`, {1., 7.}}],
+                StandardForm]],
               StripOnInput->False,
               DynamicUpdating->True,
               LineSpacing->{1, 2},
@@ -555,12 +563,12 @@ servertime\\\":1658271630430},\"\>", ",",
    Deploy,
    DefaultBaseStyle->"Deploy"],
   If[23898094345335008346 === $SessionID, 
-   Out[16], Message[
+   Out[40], Message[
      MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
    Null]]], "Output",
  CellChangeTimes->{3.86741143892222*^9, 3.867411937298443*^9, 
-  3.8674120315393543`*^9},
- CellLabel->"Out[16]=",ExpressionUUID->"d66379cc-908e-4269-9cc5-9dbcad4655c2"]
+  3.8674120315393543`*^9, 3.867619110540167*^9},
+ CellLabel->"Out[40]=",ExpressionUUID->"27b28e89-ae3e-45ef-af63-0cc13aba2c4c"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -640,700 +648,345 @@ Cell[BoxData[
   3.867413099800891*^9}, {3.867414491291505*^9, 3.8674144974307733`*^9}, {
   3.867414661503025*^9, 3.8674148623745546`*^9}, {3.8674151212322474`*^9, 
   3.8674151731904025`*^9}},
- CellLabel->"In[33]:=",ExpressionUUID->"7e2059d8-7bd8-4524-8730-853c93ca8373"],
+ CellLabel->"In[41]:=",ExpressionUUID->"7e2059d8-7bd8-4524-8730-853c93ca8373"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"115425", "\[InvisibleSpace]", "\<\" lines in file\"\>"}],
-  SequenceForm[115425, " lines in file"],
+  RowBox[{"26194", "\[InvisibleSpace]", "\<\" lines in file\"\>"}],
+  SequenceForm[26194, " lines in file"],
   Editable->False]], "Print",
  CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9},
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.867619126981359*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"0b7fd22c-3b35-4a7d-a054-581e790c83f4"],
+In[41]:=",ExpressionUUID->"e332711c-e2a3-4f85-b25f-71cdb7a58063"],
 
 Cell[BoxData[
  TemplateBox[{
-  "Import", "jsonhintposition", 
-   "\"An error occurred at line \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\):\\!\\(\\*RowBox[{\\\"90\\\"}]\\)\"", 2, 33, 
-   118, 23898094345335008346, "Local"},
+  "Import", "utf8expcontinuation", 
+   "\"Input is not a valid UTF8 byte sequence. \\!\\(\\*RowBox[{\\\"105\\\"}]\
+\\) is expected to be a continuation byte.\"", 2, 41, 142, 
+   23898094345335008346, "Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9},
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.8676191307899485`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"aaeb9692-d429-47c4-ae86-96a41577b9ce"],
+In[41]:=",ExpressionUUID->"8c2d9cf9-c0b7-4efa-9ed6-f40fba6de2a8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import", "jsonkvsep", "\"Missing key value separator ':'.\"", 2, 41, 143, 
+   23898094345335008346, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.8676191307949357`*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"340d2806-e87f-42f8-b074-f97f44278903"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import", "jsonhintposandchar", 
+   "\"An error occurred near character \
+'\\!\\(\\*RowBox[{\\\"\\\\\\\"m\\\\\\\"\\\"}]\\)', at line \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\):\\!\\(\\*RowBox[{\\\"31\\\"}]\\)\"", 2, 41, 
+   144, 23898094345335008346, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.8676191307989244`*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"cc00e3bf-3984-46aa-a141-7b0060a84f3e"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "1952"}],
-  SequenceForm["Error in line ", 1952],
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "3132"}],
+  SequenceForm["Error in line ", 3132],
   Editable->False]], "Print",
  CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674151798591447`*^9},
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.8676191308039117`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"5fce3f32-a3d8-4971-a008-4064d420ee60"],
+In[41]:=",ExpressionUUID->"052e67bd-8d25-48c8-b137-6c4a049466a8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import", "jsonhintposandchar", 
+   "\"An error occurred near character \
+'\\!\\(\\*RowBox[{\\\"\\\\\\\"2\\\\\\\"\\\"}]\\)', at line \
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\):\\!\\(\\*RowBox[{\\\"99\\\"}]\\)\"", 2, 41, 
+   145, 23898094345335008346, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.8676191313632927`*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"dead7429-9cf7-4f31-9ac8-2430648e5cc9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "3591"}],
+  SequenceForm["Error in line ", 3591],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.8676191313682795`*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"a122ef63-612e-435f-bad2-def09fba307f"],
 
 Cell[BoxData[
  TemplateBox[{
   "Import", "jsonhintposandchar", 
    "\"An error occurred near character \
 '\\!\\(\\*RowBox[{\\\"\\\\\\\"E\\\\\\\"\\\"}]\\)', at line \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\):\\!\\(\\*RowBox[{\\\"250\\\"}]\\)\"", 2, 33, 
-   119, 23898094345335008346, "Local"},
+\\!\\(\\*RowBox[{\\\"1\\\"}]\\):\\!\\(\\*RowBox[{\\\"101\\\"}]\\)\"", 2, 41, 
+   146, 23898094345335008346, "Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415188940228*^9},
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.8676191319552217`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"12a371d5-f756-40f4-8aaf-5b970bcd61ad"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "9437"}],
-  SequenceForm["Error in line ", 9437],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674151889452143`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"973071dd-01f9-47b5-aa25-07ceadf8b5c5"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "jsonkeynstr", "\"Object keys must be strings.\"", 2, 33, 120, 
-   23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415191195219*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"1209211d-f9d9-4cb5-9a39-dc248d8d7922"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "jsonhintposandchar", 
-   "\"An error occurred near character \
-'\\!\\(\\*RowBox[{\\\"\\\\\\\":\\\\\\\"\\\"}]\\)', at line \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\):\\!\\(\\*RowBox[{\\\"134\\\"}]\\)\"", 2, 33, 
-   121, 23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674151912002068`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"70d0a069-1933-4032-9996-d16a1377b9a4"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "11298"}],
-  SequenceForm["Error in line ", 11298],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674151912051935`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"81e02e3e-e1b6-416e-836d-35f5afb2f030"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "utf8badlead", 
-   "\"Input is not a valid UTF8 byte sequence. Continuation byte \
-\\!\\(\\*RowBox[{\\\"166\\\"}]\\) is expected to be a leading byte.\"", 2, 33,
-    122, 23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674151932398205`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"72bd68d1-ab11-4031-b2a9-86623274cd81"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "jsonkvsep", "\"Missing key value separator ':'.\"", 2, 33, 123, 
-   23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674151932448072`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"93793c1e-153d-4b7d-adcc-7921ec7acc41"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "jsonhintposandchar", 
-   "\"An error occurred near character \
-'\\!\\(\\*RowBox[{\\\"\\\\\\\"M\\\\\\\"\\\"}]\\)', at line \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\):\\!\\(\\*RowBox[{\\\"95\\\"}]\\)\"", 2, 33, 
-   124, 23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415193248798*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"b92a5856-98cb-4d6e-9911-f7938a4287e7"],
+In[41]:=",ExpressionUUID->"5537c4e9-f823-4e1c-ab05-9ca2d887a667"],
 
 Cell[BoxData[
  TemplateBox[{
   "General", "stop", 
    "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Import\\\", \\\"::\\\", \
 \\\"jsonhintposandchar\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
-during this calculation.\"", 2, 33, 125, 23898094345335008346, "Local"},
+during this calculation.\"", 2, 41, 147, 23898094345335008346, "Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674151932527876`*^9},
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.8676191319602084`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"b93b946f-4bb8-4265-bff9-1e2a06cff18e"],
-
-Cell[CellGroupData[{
+In[41]:=",ExpressionUUID->"71e94d65-6f68-492f-9e92-5f90194c3da3"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "12977"}],
-  SequenceForm["Error in line ", 12977],
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "4074"}],
+  SequenceForm["Error in line ", 4074],
   Editable->False]], "Print",
  CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415193256777*^9},
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.8676191319651947`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"8cadee27-0fa3-4ded-8951-aa63c0792588"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "14854"}],
-  SequenceForm["Error in line ", 14854],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674151955196676`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"c6e68ff1-21a2-4bfe-afcb-6208cd511111"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "18305"}],
-  SequenceForm["Error in line ", 18305],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674151997013817`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"4a23907e-d2c4-4015-9015-c975f2eaa6d1"]
-}, Open  ]],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "utf8expcontinuation", 
-   "\"Input is not a valid UTF8 byte sequence. \\!\\(\\*RowBox[{\\\"105\\\"}]\
-\\) is expected to be a continuation byte.\"", 2, 33, 126, 
-   23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674152002135663`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"84efaa2c-9b3b-4929-93e7-082d8e8d7429"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "jsonkvsep", "\"Missing key value separator ':'.\"", 2, 33, 127, 
-   23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674152002205477`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"10f1aec4-6cb3-411d-847d-93e73d35bcea"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "18725"}],
-  SequenceForm["Error in line ", 18725],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415200224537*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"423884dd-b883-403b-af9b-007c982b7d1f"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "jsonhintposition", 
-   "\"An error occurred at line \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\):\\!\\(\\*RowBox[{\\\"253\\\"}]\\)\"", 2, 33, 
-   128, 23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674152069180183`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"867fa05d-9f20-47c8-947d-3c80d550c822"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "24264"}],
-  SequenceForm["Error in line ", 24264],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152069240026`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"f36cc5a6-02ed-48e4-8d41-bd4e18aa1d49"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "30833"}],
-  SequenceForm["Error in line ", 30833],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152148654594`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"8e89574e-333a-43df-bac7-25e5db0880b9"]
-}, Open  ]],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "utf8badlead", 
-   "\"Input is not a valid UTF8 byte sequence. Continuation byte \
-\\!\\(\\*RowBox[{\\\"150\\\"}]\\) is expected to be a leading byte.\"", 2, 33,
-    129, 23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674152259632134`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"a9705def-5064-4a45-a797-b50654bac8cc"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "jsonkvsep", "\"Missing key value separator ':'.\"", 2, 33, 130, 
-   23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674152259691973`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"e1ef0b4a-d840-4b05-b2de-395961d9e685"],
-
-Cell[BoxData[
- TemplateBox[{
-  "General", "stop", 
-   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Import\\\", \\\"::\\\", \
-\\\"jsonkvsep\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
-calculation.\"", 2, 33, 131, 23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415225973192*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"79c6eb30-8765-425f-8a82-4b86882c466f"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "jsonhintposition", 
-   "\"An error occurred at line \
-\\!\\(\\*RowBox[{\\\"1\\\"}]\\):\\!\\(\\*RowBox[{\\\"47\\\"}]\\)\"", 2, 33, 
-   132, 23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674152259771757`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"22e692b2-5182-48ba-acd1-d9e26cbce0fb"],
-
-Cell[BoxData[
- TemplateBox[{
-  "General", "stop", 
-   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Import\\\", \\\"::\\\", \
-\\\"jsonhintposition\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
-this calculation.\"", 2, 33, 133, 23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415225980168*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"5e6a7ce3-8654-491b-a24f-9f7d82c0727d"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "39977"}],
-  SequenceForm["Error in line ", 39977],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415225984157*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"07857b14-8258-4e1a-a2b1-e0c08078aaf2"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "43458"}],
-  SequenceForm["Error in line ", 43458],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415230201192*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"ab2da48d-527d-45d7-b31b-40bffaa85ed7"]
-}, Open  ]],
+In[41]:=",ExpressionUUID->"4e11970a-c8e3-4114-a55b-2e49a58ab133"],
 
 Cell[BoxData[
  TemplateBox[{
   "Import", "utf8expcontinuation", 
    "\"Input is not a valid UTF8 byte sequence. \\!\\(\\*RowBox[{\\\"118\\\"}]\
-\\) is expected to be a continuation byte.\"", 2, 33, 134, 
+\\) is expected to be a continuation byte.\"", 2, 41, 148, 
    23898094345335008346, "Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674152350553017`*^9},
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.8676191349953794`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"2218b4a4-53cd-4f58-9fe5-0a8886f34199"],
+In[41]:=",ExpressionUUID->"03368850-a2b0-43e4-9b86-feeed2baf22d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import", "jsonkvsep", "\"Missing key value separator ':'.\"", 2, 41, 149, 
+   23898094345335008346, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.867619134999369*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"06d2b5d2-cf65-45fd-ad9d-1c6c63b9b5b0"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "47435"}],
-  SequenceForm["Error in line ", 47435],
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "6560"}],
+  SequenceForm["Error in line ", 6560],
   Editable->False]], "Print",
  CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152350622835`*^9},
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.8676191350043554`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"6bd8a51d-e446-41be-962c-2f2ca8df9394"],
+In[41]:=",ExpressionUUID->"cdcd6be9-4e8b-433f-a75d-d37d104ec89d"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "49392"}],
-  SequenceForm["Error in line ", 49392],
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "9667"}],
+  SequenceForm["Error in line ", 9667],
   Editable->False]], "Print",
  CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152374457073`*^9},
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.8676191388082247`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"801c04aa-cf4d-47e2-9bcd-7712ba87909f"]
+In[41]:=",ExpressionUUID->"dc9f248c-3df2-4d85-8eec-2c9c0d5b68c3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "12911"}],
+  SequenceForm["Error in line ", 12911],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.86761914278714*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"7ed9c5e4-f94f-480a-b915-fead531c2990"]
 }, Open  ]],
 
 Cell[BoxData[
  TemplateBox[{
   "Import", "utf8expcontinuation", 
-   "\"Input is not a valid UTF8 byte sequence. \\!\\(\\*RowBox[{\\\"109\\\"}]\
-\\) is expected to be a continuation byte.\"", 2, 33, 135, 
-   23898094345335008346, "Local"},
+   "\"Input is not a valid UTF8 byte sequence. \
+\\!\\(\\*RowBox[{\\\"97\\\"}]\\) is expected to be a continuation byte.\"", 2,
+    41, 150, 23898094345335008346, "Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.86741524017365*^9},
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.8676191431539545`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"70d173b4-744e-4b46-be38-09e2ad49228a"],
+In[41]:=",ExpressionUUID->"939156b5-b110-4961-b1ee-9906bb28b0f2"],
 
 Cell[BoxData[
  TemplateBox[{
   "General", "stop", 
    "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Import\\\", \\\"::\\\", \
 \\\"utf8expcontinuation\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
-during this calculation.\"", 2, 33, 136, 23898094345335008346, "Local"},
+during this calculation.\"", 2, 41, 151, 23898094345335008346, "Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415240179634*^9},
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.867619143159933*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"05bfbe74-6b1e-4b16-93a1-196d55889eef"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "51593"}],
-  SequenceForm["Error in line ", 51593],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152401836233`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"64074a50-19cb-4f89-aa8b-f11831ea810d"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "54200"}],
-  SequenceForm["Error in line ", 54200],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415243377136*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"aac49630-5630-4811-960a-33009428c1dc"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "60538"}],
-  SequenceForm["Error in line ", 60538],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415251080245*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"445e698d-38c6-4e58-8b22-38c194684f98"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "65414"}],
-  SequenceForm["Error in line ", 65414],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152570102787`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"47a1c71a-d645-441f-82cf-a88e7f84c43a"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "68443"}],
-  SequenceForm["Error in line ", 68443],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152607023144`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"c8af5590-5ed5-4f95-82d7-b96ddffb9d4f"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "73117"}],
-  SequenceForm["Error in line ", 73117],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152663790383`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"658e6516-6778-4bf1-8839-cd06a779952f"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "79833"}],
-  SequenceForm["Error in line ", 79833],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152745476856`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"1aa64f09-ba1e-4386-9bad-63f1120f27b0"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "80525"}],
-  SequenceForm["Error in line ", 80525],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415275391475*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"771286f9-b44e-4c2c-ba99-aac274127c06"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "82087"}],
-  SequenceForm["Error in line ", 82087],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152772931013`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"b8484cf9-92dd-42e1-86c4-c1e0eb17d49b"]
-}, Open  ]],
+In[41]:=",ExpressionUUID->"abaed3b7-eb01-4255-a101-e476cffb5457"],
 
 Cell[BoxData[
  TemplateBox[{
-  "Import", "jsoninvalidtoken", "\"Invalid token found.\"", 2, 33, 137, 
+  "Import", "jsonkvsep", "\"Missing key value separator ':'.\"", 2, 41, 152, 
    23898094345335008346, "Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674152865579557`*^9},
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.8676191431639223`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"bedd5095-73e8-4f60-b3bd-a07b6591e041"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "89690"}],
-  SequenceForm["Error in line ", 89690],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152865649366`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"b2944729-e470-4cdd-8de5-202e88c50d38"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "jsoninvalidtoken", "\"Invalid token found.\"", 2, 33, 138, 
-   23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674152908372135`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"859742eb-a4fd-4f71-9e17-b5c0291aadf4"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "93208"}],
-  SequenceForm["Error in line ", 93208],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415290842185*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"5669eaaa-05a9-4b5e-89a9-a427bae4cdd4"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "94181"}],
-  SequenceForm["Error in line ", 94181],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152920185533`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"417dd907-a75a-4e82-82ad-9505e3d129df"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "94533"}],
-  SequenceForm["Error in line ", 94533],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415292446441*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"eeb4dd85-ed5c-4c23-8651-f7b9c418faeb"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "95059"}],
-  SequenceForm["Error in line ", 95059],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152930872335`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"e4119adf-53a1-4e58-8767-1a0d180775d6"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "95399"}],
-  SequenceForm["Error in line ", 95399],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152935001335`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"cf378b2f-addb-434c-9b52-ab52789bd929"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "95910"}],
-  SequenceForm["Error in line ", 95910],
-  Editable->False]], "Print",
- CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415294125495*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"998ac92a-2d74-42ae-8107-362c802155b2"]
-}, Open  ]],
-
-Cell[BoxData[
- TemplateBox[{
-  "Import", "jsoninvalidtoken", "\"Invalid token found.\"", 2, 33, 139, 
-   23898094345335008346, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.8674152952759123`*^9},
- CellLabel->
-  "During evaluation of \
-In[33]:=",ExpressionUUID->"a48799ea-a8c5-4c2b-9234-6644a65ae1ae"],
+In[41]:=",ExpressionUUID->"2e0a4d53-d4bf-47ab-aac6-5f886246d9bd"],
 
 Cell[BoxData[
  TemplateBox[{
   "General", "stop", 
    "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Import\\\", \\\"::\\\", \
-\\\"jsoninvalidtoken\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
-this calculation.\"", 2, 33, 140, 23898094345335008346, "Local"},
+\\\"jsonkvsep\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"", 2, 41, 153, 23898094345335008346, "Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{3.867412840867447*^9, 3.8674128968973513`*^9, 
-  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415295282894*^9},
+  3.8674131201892357`*^9, 3.8674148721770062`*^9, 3.867415179853161*^9, 
+  3.8676191431669145`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"0274efca-1493-483f-ba8c-cefbbeffa00a"],
+In[41]:=",ExpressionUUID->"1aec03ea-f5ab-4497-be05-c627ba9545f7"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "96849"}],
-  SequenceForm["Error in line ", 96849],
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "13208"}],
+  SequenceForm["Error in line ", 13208],
   Editable->False]], "Print",
  CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674152952868834`*^9},
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.8676191431719017`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"bd97bf83-0e89-4ca1-8318-a5e87b45ecfe"],
+In[41]:=",ExpressionUUID->"caab6d22-e888-4d0f-bee8-795e4682a189"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "106726"}],
-  SequenceForm["Error in line ", 106726],
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "15968"}],
+  SequenceForm["Error in line ", 15968],
   Editable->False]], "Print",
  CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.8674153073403783`*^9},
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.867619146559441*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"9518866d-c5dd-4927-b271-4c1a9914a627"],
+In[41]:=",ExpressionUUID->"48418050-e930-4b31-963a-2171a29130a6"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "111343"}],
-  SequenceForm["Error in line ", 111343],
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "17105"}],
+  SequenceForm["Error in line ", 17105],
   Editable->False]], "Print",
  CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415312958955*^9},
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.8676191479588184`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"6c32aafb-7a65-4b1c-b913-78daa8f123d2"],
+In[41]:=",ExpressionUUID->"685420b8-1789-44c9-a284-55c3826a7e8f"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "113633"}],
-  SequenceForm["Error in line ", 113633],
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "17149"}],
+  SequenceForm["Error in line ", 17149],
   Editable->False]], "Print",
  CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415315747396*^9},
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.867619148014669*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"a4b6416b-b7a3-4738-8e73-914e90a3b361"],
+In[41]:=",ExpressionUUID->"ffa96e2c-cc9f-4ae1-861c-541c39f87068"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"33", "\[InvisibleSpace]", "\<\" error lines\"\>"}],
-  SequenceForm[33, " error lines"],
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "20342"}],
+  SequenceForm["Error in line ", 20342],
   Editable->False]], "Print",
  CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
-  3.867413117869877*^9, 3.867414869824624*^9, 3.867415317927439*^9},
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.8676191519524603`*^9},
  CellLabel->
   "During evaluation of \
-In[33]:=",ExpressionUUID->"fa3b4ae0-f754-4525-91e7-0bfa1b30ce7c"]
+In[41]:=",ExpressionUUID->"fa78a799-88ae-4f20-9a91-a502acd214a0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Error in line \"\>", "\[InvisibleSpace]", "21727"}],
+  SequenceForm["Error in line ", 21727],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.8676191536476336`*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"54c2b12b-d4af-45fe-bb0d-17bf1e6df21a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"12", "\[InvisibleSpace]", "\<\" error lines\"\>"}],
+  SequenceForm[12, " error lines"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86741284072281*^9, 3.8674128945872107`*^9, 
+  3.867413117869877*^9, 3.867414869824624*^9, 3.867415177446508*^9, 
+  3.867619159111374*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"c1ed52f2-7972-4e1b-b445-988ef044af53"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1605,21 +1258,26 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"Export", "[", 
-  RowBox[{"\"\<c:\\\\temp\\\\fixed\>\"", ",", 
+  RowBox[{
+  "\"\<c:\\\\git\\\\FusorExperiments\\\\logs\\\\keep\\\\fusor-2022-07-22T16-\
+23-42_Friday traversal.json\>\"", ",", 
    RowBox[{"newRaw", "[", 
     RowBox[{"[", 
      RowBox[{"2", ",", "1"}], "]"}], "]"}], ",", "\"\<list\>\""}], 
   "]"}]], "Input",
- CellChangeTimes->{{3.867415416207534*^9, 3.867415496942047*^9}},
- CellLabel->"In[38]:=",ExpressionUUID->"67a05759-b4ad-4f30-ac93-b14820bbf7f6"],
+ CellChangeTimes->{{3.867415416207534*^9, 3.867415496942047*^9}, 
+   3.8676192243169594`*^9},
+ CellLabel->"In[42]:=",ExpressionUUID->"67a05759-b4ad-4f30-ac93-b14820bbf7f6"],
 
-Cell[BoxData["\<\"c:\\\\temp\\\\fixed\"\>"], "Output",
- CellChangeTimes->{{3.8674154836955285`*^9, 3.8674154994415874`*^9}},
- CellLabel->"Out[38]=",ExpressionUUID->"37d9a72f-001f-4b05-8666-cc9f428c5d5d"]
+Cell[BoxData["\<\"c:\\\\git\\\\FusorExperiments\\\\logs\\\\keep\\\\fusor-2022-\
+07-22T16-23-42_Friday traversal.json\"\>"], "Output",
+ CellChangeTimes->{{3.8674154836955285`*^9, 3.8674154994415874`*^9}, 
+   3.8676192340698786`*^9},
+ CellLabel->"Out[42]=",ExpressionUUID->"b815aedf-3150-4793-991f-00cf5e974ea4"]
 }, Open  ]]
 },
 WindowSize->{1038., 610.8},
-WindowMargins->{{Automatic, 234.60000000000014`}, {84, Automatic}},
+WindowMargins->{{91.8, Automatic}, {85.20000000000005, Automatic}},
 FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"401f006c-71fe-4f18-9f37-8de1af2724db"
@@ -1637,98 +1295,56 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 400, 8, 28, "Input",ExpressionUUID->"210cee00-1165-4516-8c72-57c819975125"],
-Cell[983, 32, 11198, 279, 180, "Output",ExpressionUUID->"e4495372-2613-4391-b730-8075e3b74538"]
+Cell[983, 32, 11375, 282, 180, "Output",ExpressionUUID->"e4495372-2613-4391-b730-8075e3b74538"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12218, 316, 466, 9, 28, "Input",ExpressionUUID->"178eeede-8231-4fcb-bef2-58855ac9c99b"],
-Cell[12687, 327, 9182, 235, 118, "Output",ExpressionUUID->"d66379cc-908e-4269-9cc5-9dbcad4655c2"]
+Cell[12395, 319, 505, 9, 28, "Input",ExpressionUUID->"178eeede-8231-4fcb-bef2-58855ac9c99b"],
+Cell[12903, 330, 9514, 240, 158, "Output",ExpressionUUID->"27b28e89-ae3e-45ef-af63-0cc13aba2c4c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21906, 567, 213, 3, 28, "Input",ExpressionUUID->"b5b82cb1-3819-4915-80fc-0223cbcfcfbe"],
-Cell[22122, 572, 225, 4, 32, "Output",ExpressionUUID->"0eb22283-54cf-4923-99f5-c340c212cb57"]
+Cell[22454, 575, 213, 3, 28, "Input",ExpressionUUID->"b5b82cb1-3819-4915-80fc-0223cbcfcfbe"],
+Cell[22670, 580, 225, 4, 32, "Output",ExpressionUUID->"0eb22283-54cf-4923-99f5-c340c212cb57"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22384, 581, 2611, 61, 302, "Input",ExpressionUUID->"7e2059d8-7bd8-4524-8730-853c93ca8373"],
-Cell[24998, 644, 413, 9, 21, "Print",ExpressionUUID->"0b7fd22c-3b35-4a7d-a054-581e790c83f4"],
-Cell[25414, 655, 497, 11, 24, "Message",ExpressionUUID->"aaeb9692-d429-47c4-ae86-96a41577b9ce"],
-Cell[25914, 668, 411, 9, 21, "Print",ExpressionUUID->"5fce3f32-a3d8-4971-a008-4064d420ee60"],
-Cell[26328, 679, 568, 12, 24, "Message",ExpressionUUID->"12a371d5-f756-40f4-8aaf-5b970bcd61ad"],
-Cell[26899, 693, 411, 9, 21, "Print",ExpressionUUID->"973071dd-01f9-47b5-aa25-07ceadf8b5c5"],
-Cell[27313, 704, 424, 9, 24, "Message",ExpressionUUID->"1209211d-f9d9-4cb5-9a39-dc248d8d7922"],
-Cell[27740, 715, 570, 12, 24, "Message",ExpressionUUID->"70d0a069-1933-4032-9996-d16a1377b9a4"],
-Cell[28313, 729, 413, 9, 21, "Print",ExpressionUUID->"81e02e3e-e1b6-416e-836d-35f5afb2f030"],
-Cell[28729, 740, 530, 11, 24, "Message",ExpressionUUID->"72bd68d1-ab11-4031-b2a9-86623274cd81"],
-Cell[29262, 753, 428, 9, 24, "Message",ExpressionUUID->"93793c1e-153d-4b7d-adcc-7921ec7acc41"],
-Cell[29693, 764, 567, 12, 24, "Message",ExpressionUUID->"b92a5856-98cb-4d6e-9911-f7938a4287e7"],
-Cell[30263, 778, 565, 11, 24, "Message",ExpressionUUID->"b93b946f-4bb8-4265-bff9-1e2a06cff18e"],
+Cell[22932, 589, 2611, 61, 302, "Input",ExpressionUUID->"7e2059d8-7bd8-4524-8730-853c93ca8373"],
+Cell[25546, 652, 436, 10, 21, "Print",ExpressionUUID->"e332711c-e2a3-4f85-b25f-71cdb7a58063"],
+Cell[25985, 664, 550, 12, 24, "Message",ExpressionUUID->"8c2d9cf9-c0b7-4efa-9ed6-f40fba6de2a8"],
+Cell[26538, 678, 453, 10, 24, "Message",ExpressionUUID->"340d2806-e87f-42f8-b074-f97f44278903"],
+Cell[26994, 690, 594, 13, 24, "Message",ExpressionUUID->"cc00e3bf-3984-46aa-a141-7b0060a84f3e"],
+Cell[27591, 705, 436, 10, 21, "Print",ExpressionUUID->"052e67bd-8d25-48c8-b137-6c4a049466a8"],
+Cell[28030, 717, 594, 13, 24, "Message",ExpressionUUID->"dead7429-9cf7-4f31-9ac8-2430648e5cc9"],
+Cell[28627, 732, 436, 10, 21, "Print",ExpressionUUID->"a122ef63-612e-435f-bad2-def09fba307f"],
+Cell[29066, 744, 595, 13, 24, "Message",ExpressionUUID->"5537c4e9-f823-4e1c-ab05-9ca2d887a667"],
+Cell[29664, 759, 590, 12, 24, "Message",ExpressionUUID->"71e94d65-6f68-492f-9e92-5f90194c3da3"],
+Cell[30257, 773, 436, 10, 21, "Print",ExpressionUUID->"4e11970a-c8e3-4114-a55b-2e49a58ab133"],
+Cell[30696, 785, 550, 12, 24, "Message",ExpressionUUID->"03368850-a2b0-43e4-9b86-feeed2baf22d"],
+Cell[31249, 799, 451, 10, 24, "Message",ExpressionUUID->"06d2b5d2-cf65-45fd-ad9d-1c6c63b9b5b0"],
 Cell[CellGroupData[{
-Cell[30853, 793, 411, 9, 21, "Print",ExpressionUUID->"8cadee27-0fa3-4ded-8951-aa63c0792588"],
-Cell[31267, 804, 413, 9, 21, "Print",ExpressionUUID->"c6e68ff1-21a2-4bfe-afcb-6208cd511111"],
-Cell[31683, 815, 413, 9, 21, "Print",ExpressionUUID->"4a23907e-d2c4-4015-9015-c975f2eaa6d1"]
+Cell[31725, 813, 436, 10, 21, "Print",ExpressionUUID->"cdcd6be9-4e8b-433f-a75d-d37d104ec89d"],
+Cell[32164, 825, 436, 10, 21, "Print",ExpressionUUID->"dc9f248c-3df2-4d85-8eec-2c9c0d5b68c3"],
+Cell[32603, 837, 435, 10, 21, "Print",ExpressionUUID->"7ed9c5e4-f94f-480a-b915-fead531c2990"]
 }, Open  ]],
-Cell[32111, 827, 525, 11, 24, "Message",ExpressionUUID->"84efaa2c-9b3b-4929-93e7-082d8e8d7429"],
-Cell[32639, 840, 428, 9, 24, "Message",ExpressionUUID->"10f1aec4-6cb3-411d-847d-93e73d35bcea"],
-Cell[33070, 851, 411, 9, 21, "Print",ExpressionUUID->"423884dd-b883-403b-af9b-007c982b7d1f"],
-Cell[33484, 862, 500, 11, 24, "Message",ExpressionUUID->"867fa05d-9f20-47c8-947d-3c80d550c822"],
+Cell[33053, 850, 549, 12, 24, "Message",ExpressionUUID->"939156b5-b110-4961-b1ee-9906bb28b0f2"],
+Cell[33605, 864, 589, 12, 24, "Message",ExpressionUUID->"abaed3b7-eb01-4255-a101-e476cffb5457"],
+Cell[34197, 878, 453, 10, 24, "Message",ExpressionUUID->"2e0a4d53-d4bf-47ab-aac6-5f886246d9bd"],
+Cell[34653, 890, 581, 12, 24, "Message",ExpressionUUID->"1aec03ea-f5ab-4497-be05-c627ba9545f7"],
 Cell[CellGroupData[{
-Cell[34009, 877, 413, 9, 21, "Print",ExpressionUUID->"f36cc5a6-02ed-48e4-8d41-bd4e18aa1d49"],
-Cell[34425, 888, 413, 9, 21, "Print",ExpressionUUID->"8e89574e-333a-43df-bac7-25e5db0880b9"]
-}, Open  ]],
-Cell[34853, 900, 530, 11, 24, "Message",ExpressionUUID->"a9705def-5064-4a45-a797-b50654bac8cc"],
-Cell[35386, 913, 428, 9, 24, "Message",ExpressionUUID->"e1ef0b4a-d840-4b05-b2de-395961d9e685"],
-Cell[35817, 924, 554, 11, 24, "Message",ExpressionUUID->"79c6eb30-8765-425f-8a82-4b86882c466f"],
-Cell[36374, 937, 499, 11, 24, "Message",ExpressionUUID->"22e692b2-5182-48ba-acd1-d9e26cbce0fb"],
-Cell[36876, 950, 561, 11, 24, "Message",ExpressionUUID->"5e6a7ce3-8654-491b-a24f-9f7d82c0727d"],
-Cell[CellGroupData[{
-Cell[37462, 965, 411, 9, 21, "Print",ExpressionUUID->"07857b14-8258-4e1a-a2b1-e0c08078aaf2"],
-Cell[37876, 976, 411, 9, 21, "Print",ExpressionUUID->"ab2da48d-527d-45d7-b31b-40bffaa85ed7"]
-}, Open  ]],
-Cell[38302, 988, 525, 11, 24, "Message",ExpressionUUID->"2218b4a4-53cd-4f58-9fe5-0a8886f34199"],
-Cell[CellGroupData[{
-Cell[38852, 1003, 413, 9, 21, "Print",ExpressionUUID->"6bd8a51d-e446-41be-962c-2f2ca8df9394"],
-Cell[39268, 1014, 413, 9, 21, "Print",ExpressionUUID->"801c04aa-cf4d-47e2-9bcd-7712ba87909f"]
-}, Open  ]],
-Cell[39696, 1026, 522, 11, 24, "Message",ExpressionUUID->"70d173b4-744e-4b46-be38-09e2ad49228a"],
-Cell[40221, 1039, 564, 11, 24, "Message",ExpressionUUID->"05bfbe74-6b1e-4b16-93a1-196d55889eef"],
-Cell[CellGroupData[{
-Cell[40810, 1054, 413, 9, 21, "Print",ExpressionUUID->"64074a50-19cb-4f89-aa8b-f11831ea810d"],
-Cell[41226, 1065, 411, 9, 21, "Print",ExpressionUUID->"aac49630-5630-4811-960a-33009428c1dc"],
-Cell[41640, 1076, 411, 9, 21, "Print",ExpressionUUID->"445e698d-38c6-4e58-8b22-38c194684f98"],
-Cell[42054, 1087, 413, 9, 21, "Print",ExpressionUUID->"47a1c71a-d645-441f-82cf-a88e7f84c43a"],
-Cell[42470, 1098, 413, 9, 21, "Print",ExpressionUUID->"c8af5590-5ed5-4f95-82d7-b96ddffb9d4f"],
-Cell[42886, 1109, 413, 9, 21, "Print",ExpressionUUID->"658e6516-6778-4bf1-8839-cd06a779952f"],
-Cell[43302, 1120, 413, 9, 21, "Print",ExpressionUUID->"1aa64f09-ba1e-4386-9bad-63f1120f27b0"],
-Cell[43718, 1131, 411, 9, 21, "Print",ExpressionUUID->"771286f9-b44e-4c2c-ba99-aac274127c06"],
-Cell[44132, 1142, 413, 9, 21, "Print",ExpressionUUID->"b8484cf9-92dd-42e1-86c4-c1e0eb17d49b"]
-}, Open  ]],
-Cell[44560, 1154, 423, 9, 24, "Message",ExpressionUUID->"bedd5095-73e8-4f60-b3bd-a07b6591e041"],
-Cell[44986, 1165, 413, 9, 21, "Print",ExpressionUUID->"b2944729-e470-4cdd-8de5-202e88c50d38"],
-Cell[45402, 1176, 423, 9, 24, "Message",ExpressionUUID->"859742eb-a4fd-4f71-9e17-b5c0291aadf4"],
-Cell[CellGroupData[{
-Cell[45850, 1189, 411, 9, 21, "Print",ExpressionUUID->"5669eaaa-05a9-4b5e-89a9-a427bae4cdd4"],
-Cell[46264, 1200, 413, 9, 21, "Print",ExpressionUUID->"417dd907-a75a-4e82-82ad-9505e3d129df"],
-Cell[46680, 1211, 411, 9, 21, "Print",ExpressionUUID->"eeb4dd85-ed5c-4c23-8651-f7b9c418faeb"],
-Cell[47094, 1222, 413, 9, 21, "Print",ExpressionUUID->"e4119adf-53a1-4e58-8767-1a0d180775d6"],
-Cell[47510, 1233, 413, 9, 21, "Print",ExpressionUUID->"cf378b2f-addb-434c-9b52-ab52789bd929"],
-Cell[47926, 1244, 411, 9, 21, "Print",ExpressionUUID->"998ac92a-2d74-42ae-8107-362c802155b2"]
-}, Open  ]],
-Cell[48352, 1256, 423, 9, 24, "Message",ExpressionUUID->"a48799ea-a8c5-4c2b-9234-6644a65ae1ae"],
-Cell[48778, 1267, 561, 11, 24, "Message",ExpressionUUID->"0274efca-1493-483f-ba8c-cefbbeffa00a"],
-Cell[CellGroupData[{
-Cell[49364, 1282, 413, 9, 21, "Print",ExpressionUUID->"bd97bf83-0e89-4ca1-8318-a5e87b45ecfe"],
-Cell[49780, 1293, 415, 9, 21, "Print",ExpressionUUID->"9518866d-c5dd-4927-b271-4c1a9914a627"],
-Cell[50198, 1304, 413, 9, 21, "Print",ExpressionUUID->"6c32aafb-7a65-4b1c-b913-78daa8f123d2"],
-Cell[50614, 1315, 413, 9, 21, "Print",ExpressionUUID->"a4b6416b-b7a3-4738-8e73-914e90a3b361"],
-Cell[51030, 1326, 401, 9, 21, "Print",ExpressionUUID->"fa3b4ae0-f754-4525-91e7-0bfa1b30ce7c"]
+Cell[35259, 906, 438, 10, 21, "Print",ExpressionUUID->"caab6d22-e888-4d0f-bee8-795e4682a189"],
+Cell[35700, 918, 436, 10, 21, "Print",ExpressionUUID->"48418050-e930-4b31-963a-2171a29130a6"],
+Cell[36139, 930, 438, 10, 21, "Print",ExpressionUUID->"685420b8-1789-44c9-a284-55c3826a7e8f"],
+Cell[36580, 942, 436, 10, 21, "Print",ExpressionUUID->"ffa96e2c-cc9f-4ae1-861c-541c39f87068"],
+Cell[37019, 954, 438, 10, 21, "Print",ExpressionUUID->"fa78a799-88ae-4f20-9a91-a502acd214a0"],
+Cell[37460, 966, 438, 10, 21, "Print",ExpressionUUID->"54c2b12b-d4af-45fe-bb0d-17bf1e6df21a"],
+Cell[37901, 978, 426, 10, 21, "Print",ExpressionUUID->"c1ed52f2-7972-4e1b-b445-988ef044af53"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[51480, 1341, 304, 6, 28, "Input",ExpressionUUID->"0473da03-bcd0-4d3c-abd2-d6ab486dc98d"],
-Cell[51787, 1349, 10369, 251, 274, "Output",ExpressionUUID->"7ee0e7b8-5608-4c53-b9b8-319b8b3526d2"]
+Cell[38376, 994, 304, 6, 28, "Input",ExpressionUUID->"0473da03-bcd0-4d3c-abd2-d6ab486dc98d"],
+Cell[38683, 1002, 10369, 251, 274, "Output",ExpressionUUID->"7ee0e7b8-5608-4c53-b9b8-319b8b3526d2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[62193, 1605, 362, 8, 28, "Input",ExpressionUUID->"67a05759-b4ad-4f30-ac93-b14820bbf7f6"],
-Cell[62558, 1615, 203, 2, 32, "Output",ExpressionUUID->"37d9a72f-001f-4b05-8666-cc9f428c5d5d"]
+Cell[49089, 1258, 472, 11, 49, "Input",ExpressionUUID->"67a05759-b4ad-4f30-ac93-b14820bbf7f6"],
+Cell[49564, 1271, 310, 4, 81, "Output",ExpressionUUID->"b815aedf-3150-4793-991f-00cf5e974ea4"]
 }, Open  ]]
 }
 ]
