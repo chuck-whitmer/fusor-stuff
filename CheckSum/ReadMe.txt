@@ -2,7 +2,7 @@ CheckSum
 
 Computes the hexidecimal checksum needed by the GF-880x clock.
 
-The binary is provided in x64\Debug.
+The binary is provided in x64\Release.
 
 You can compute several checksums at once.  If your command has spaces in it, then quote it.
 
